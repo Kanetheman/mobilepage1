@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Connection for Mental Health • Compassionate Mental Health Care</title>
+  <meta name="description" content="Modern, inviting mental health counseling website template. Mobile‑first, accessible, and easy to customize for solo therapists or group practices." />
+  <meta name="theme-color" content="#803138" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Connection for Mental Health" />
+  <meta property="og:description" content="Compassionate, evidence‑based therapy for individuals, couples, and teens." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- TailwindCSS CDN (for quick start). For production, compile locally. -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'Apple Color Emoji', 'Segoe UI Emoji'],
+            display: ['Playfair Display', 'ui-serif', 'Georgia', 'serif']
+          },
+          colors: {
+            brand: {
+              50: '#f8f1f2',
+              100: '#f2e8ea',
+              200: '#e5d1d5',
+              300: '#d7b9bf',
+              400: '#b96a70',
+              500: '#9c474d',
+              600: '#803138',
+              700: '#66282d',
+              800: '#4b1f24',
+              900: '#3a181d'
+            }
+          },
+          boxShadow: {
+            soft: '0 10px 25px -10px rgba(2,132,199,0.25)',
+          },
+          backgroundImage: {
+            'hero-gradient': 'radial-gradient(60% 80% at 50% 0%, rgba(128,49,56,0.25) 0%, rgba(156,71,77,0.15) 35%, rgba(255,255,255,0) 70%)',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Subtle fade / slide for section reveals */
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    /* Focus ring tweak for accessibility */
+    :focus-visible { outline: 2px dashed #0ea5e9; outline-offset: 3px; }
+  </style>
+  
+  <!-- Structured data (customize name, address, hours, etc.) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "name": "Connection for Mental Health",
+    "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop",
+    "url": "https://www.harbor-mind.example/",
+    "telephone": "+1-555-555-0199",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Harbor Ave Suite 200",
+      "addressLocality": "Riverdale",
+      "addressRegion": "MI",
+      "postalCode": "48123",
+      "addressCountry": "US"
+    },
+    "areaServed": "US",
+    "priceRange": "$$",
+    "medicalSpecialty": ["MentalHealth"],
+    "openingHoursSpecification": [
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "09:00", "closes": "18:00"},
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "09:00", "closes": "15:00"}
+    ]
+  }
+  </script>
+</head>
+<body class="bg-white text-slate-800 antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 bg-white px-3 py-2 rounded-md shadow">Skip to content</a>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/90 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="#home" class="flex items-center gap-3" aria-label="Connection for Mental Health home">
+          <img src="logo.png" alt="Connection for Mental Health logo" class="h-8 w-auto"/>
+          <span class="font-display text-xl tracking-tight">Connection for Mental Health</span>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-8" aria-label="Primary">
+          <a href="#services" class="hover:text-brand-700">Services</a>
+          <a href="#therapists" class="hover:text-brand-700">Therapists</a>
+          <a href="#approach" class="hover:text-brand-700">Approach</a>
+          <a href="#faq" class="hover:text-brand-700">FAQ</a>
+          <a href="#contact" class="hover:text-brand-700">Contact</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <a href="#contact" class="hidden sm:inline-flex items-center gap-2 rounded-xl bg-brand-600 px-4 py-2 text-white font-medium shadow-soft hover:bg-brand-700 focus-visible:outline-none">Book a Session
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 5l7 7-7 7v-4H4v-6h9V5z"/></svg>
+          </a>
+          <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-lg p-2 hover:bg-slate-100" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+            <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200">
+      <nav class="px-4 py-3 space-y-1" aria-label="Mobile">
+        <a class="block px-3 py-2 rounded-lg hover:bg-slate-100" href="#services">Services</a>
+        <a class="block px-3 py-2 rounded-lg hover:bg-slate-100" href="#therapists">Therapists</a>
+        <a class="block px-3 py-2 rounded-lg hover:bg-slate-100" href="#approach">Approach</a>
+        <a class="block px-3 py-2 rounded-lg hover:bg-slate-100" href="#faq">FAQ</a>
+        <a class="block px-3 py-2 rounded-lg hover:bg-slate-100" href="#contact">Contact</a>
+        <a class="block px-3 py-2 rounded-lg bg-brand-600 text-white" href="#contact">Book a Session</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section id="home" class="relative isolate overflow-hidden bg-hero-gradient">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-10 items-center py-16 sm:py-20">
+          <div class="reveal">
+            <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl leading-tight tracking-tight text-slate-900">
+              Find your calm. <span class="text-brand-700">Start your healing.</span>
+            </h1>
+            <p class="mt-6 text-lg text-slate-600 max-w-prose">We provide compassionate, evidence‑based counseling for individuals, couples, and teens. Whether you’re facing anxiety, depression, relationship stress, or life transitions—this is a safe harbor to talk and grow.</p>
+            <div class="mt-8 flex flex-wrap gap-3">
+              <a href="#contact" class="inline-flex items-center gap-2 rounded-xl bg-brand-600 px-5 py-3 text-white font-semibold shadow-soft hover:bg-brand-700">Book a session
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M13 5l7 7-7 7v-4H4v-6h9V5z"/></svg>
+              </a>
+              <a href="#services" class="inline-flex items-center gap-2 rounded-xl border border-slate-300 px-5 py-3 font-semibold text-slate-700 hover:bg-slate-50">Explore services
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M7 12h10v2H7z"/></svg>
+              </a>
+            </div>
+            <div class="mt-6 flex items-center gap-6 text-sm text-slate-600">
+              <div class="flex items-center gap-2"><span class="inline-block h-2.5 w-2.5 rounded-full bg-green-500"></span> Accepting new clients</div>
+              <div>In‑person & telehealth</div>
+            </div>
+          </div>
+          <div class="reveal lg:justify-self-end">
+            <img class="rounded-3xl shadow-xl ring-1 ring-black/5 w-full max-w-lg mx-auto" src="https://images.unsplash.com/photo-1551847664-5d8748d7b3c6?q=80&w=1200&auto=format&fit=crop" alt="A calming therapy room with soft light and plants" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust badges / quick facts -->
+    <section class="py-10 border-y border-slate-100 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+        <div class="reveal"><p class="text-3xl font-bold text-brand-700">10+</p><p class="text-slate-600">Years in practice</p></div>
+        <div class="reveal"><p class="text-3xl font-bold text-brand-700">2000+</p><p class="text-slate-600">Clients supported</p></div>
+        <div class="reveal"><p class="text-3xl font-bold text-brand-700">24–48h</p><p class="text-slate-600">Avg. intake response</p></div>
+        <div class="reveal"><p class="text-3xl font-bold text-brand-700">Telehealth</p><p class="text-slate-600">HIPAA‑compliant</p></div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-16 sm:py-20 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="reveal text-center max-w-2xl mx-auto">
+          <h2 class="font-display text-3xl sm:text-4xl text-slate-900">How we can help</h2>
+          <p class="mt-3 text-slate-600">Personalized, evidence‑based care for what you’re going through.</p>
+        </div>
+        <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- Card -->
+          <article class="reveal rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+            <div class="h-12 w-12 rounded-xl bg-brand-100 flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-brand-700" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21a9 9 0 100-18 9 9 0 000 18zM9 9h6v6H9z"/></svg>
+            </div>
+            <h3 class="font-semibold text-lg">Anxiety & Stress</h3>
+            <p class="mt-2 text-slate-600">CBT and mindfulness tools to calm the nervous system and build resilience.</p>
+          </article>
+          <article class="reveal rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+            <div class="h-12 w-12 rounded-xl bg-brand-100 flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-brand-700" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l7 6v9a3 3 0 01-3 3H8a3 3 0 01-3-3V9l7-6z"/></svg>
+            </div>
+            <h3 class="font-semibold text-lg">Relationships</h3>
+            <p class="mt-2 text-slate-600">Support for couples and families to rebuild communication, trust, and connection.</p>
+          </article>
+          <article class="reveal rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+            <div class="h-12 w-12 rounded-xl bg-brand-100 flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-brand-700" viewBox="0 0 24 24" fill="currentColor"><path d="M17 9V7a5 5 0 10-10 0v2H5v10h14V9h-2zm-8 0V7a3 3 0 116 0v2H9z"/></svg>
+            </div>
+            <h3 class="font-semibold text-lg">Teens & Young Adults</h3>
+            <p class="mt-2 text-slate-600">A supportive space for identity, school pressure, and big life changes.</p>
+          </article>
+          <article class="reveal rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+            <div class="h-12 w-12 rounded-xl bg-brand-100 flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-brand-700" viewBox="0 0 24 24" fill="currentColor"><path d="M6 4h12v2H6V4zm0 7h12v2H6v-2zm0 7h12v2H6v-2z"/></svg>
+            </div>
+            <h3 class="font-semibold text-lg">Depression & Mood</h3>
+            <p class="mt-2 text-slate-600">Behavioral activation and strengths‑based strategies to rediscover energy and hope.</p>
+          </article>
+          <article class="reveal rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+            <div class="h-12 w-12 rounded-xl bg-brand-100 flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-brand-700" viewBox="0 0 24 24" fill="currentColor"><path d="M3 12l9-9 9 9-9 9-9-9z"/></svg>
+            </div>
+            <h3 class="font-semibold text-lg">Trauma‑Informed Care</h3>
+            <p class="mt-2 text-slate-600">Grounded, empowering approaches (EMDR‑ready layout) to process and heal safely.</p>
+          </article>
+          <article class="reveal rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+            <div class="h-12 w-12 rounded-xl bg-brand-100 flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-brand-700" viewBox="0 0 24 24" fill="currentColor"><path d="M12 22a10 10 0 110-20 10 10 0 010 20z"/></svg>
+            </div>
+            <h3 class="font-semibold text-lg">Life Transitions</h3>
+            <p class="mt-2 text-slate-600">Career changes, grief, parenthood, and creative blocks—find steady ground.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Therapists -->
+    <section id="therapists" class="py-16 sm:py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="reveal text-center max-w-2xl mx-auto">
+          <h2 class="font-display text-3xl sm:text-4xl text-slate-900">Meet your therapists</h2>
+          <p class="mt-3 text-slate-600">Licensed, trauma‑informed, and dedicated to your goals.</p>
+        </div>
+        <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- Therapist card -->
+          <article class="reveal rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-200">
+            <img class="h-48 w-full object-cover rounded-xl" src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=1200&auto=format&fit=crop" alt="Therapist portrait" />
+            <h3 class="mt-4 font-semibold text-lg">Alex Morgan, LPC</h3>
+            <p class="text-sm text-slate-600">Anxiety • Burnout • Life transitions</p>
+            <p class="mt-3 text-slate-700 text-sm">Alex integrates CBT and mindfulness to help clients build clarity, confidence, and calm in everyday life.</p>
+          </article>
+          <article class="reveal rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-200">
+            <img class="h-48 w-full object-cover rounded-xl" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop" alt="Therapist portrait" />
+            <h3 class="mt-4 font-semibold text-lg">Priya Shah, LMFT</h3>
+            <p class="text-sm text-slate-600">Couples • Communication • Family systems</p>
+            <p class="mt-3 text-slate-700 text-sm">Priya blends emotionally focused therapy with practical tools to strengthen connection and trust.</p>
+          </article>
+          <article class="reveal rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-200">
+            <img class="h-48 w-full object-cover rounded-xl" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1200&auto=format&fit=crop" alt="Therapist portrait" />
+            <h3 class="mt-4 font-semibold text-lg">Jordan Lee, LCSW</h3>
+            <p class="text-sm text-slate-600">Teens • Identity • Trauma‑informed</p>
+            <p class="mt-3 text-slate-700 text-sm">Jordan creates a warm, affirming space for teens and young adults navigating change.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Approach -->
+    <section id="approach" class="py-16 sm:py-20 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
+        <div class="reveal order-2 lg:order-1">
+          <img class="rounded-3xl shadow-xl ring-1 ring-black/5 w-full" src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1200&auto=format&fit=crop" alt="A cozy corner with a journal and tea" />
+        </div>
+        <div class="reveal order-1 lg:order-2">
+          <h2 class="font-display text-3xl sm:text-4xl text-slate-900">Our approach</h2>
+          <p class="mt-4 text-slate-700">We combine research‑backed modalities with a human, collaborative style. You set the pace—we provide structure, reflection, and skills.</p>
+          <ul class="mt-6 space-y-3 text-slate-700">
+            <li class="flex gap-3"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-brand-500"></span><strong>Evidence‑based:</strong> CBT, DBT‑informed, ACT, EFT, and trauma‑informed care.</li>
+            <li class="flex gap-3"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-brand-500"></span><strong>Whole‑person:</strong> Mental health intersects with work, culture, identity, and body.</li>
+            <li class="flex gap-3"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-brand-500"></span><strong>Flexible:</strong> In‑person and telehealth, daytime and limited evening hours.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Insurance & Pricing -->
+    <section class="py-16 sm:py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="reveal text-center max-w-2xl mx-auto">
+          <h2 class="font-display text-3xl sm:text-4xl text-slate-900">Insurance & Pricing</h2>
+          <p class="mt-3 text-slate-600">We offer transparent, flexible options.</p>
+        </div>
+        <div class="mt-10 grid gap-6 md:grid-cols-3">
+          <div class="reveal rounded-2xl p-6 ring-1 ring-slate-200 bg-slate-50">
+            <h3 class="font-semibold">In‑Network</h3>
+            <p class="mt-2 text-slate-600 text-sm">Blue Cross • Aetna • Cigna (customize list)</p>
+          </div>
+          <div class="reveal rounded-2xl p-6 ring-1 ring-slate-200 bg-slate-50">
+            <h3 class="font-semibold">Private Pay</h3>
+            <p class="mt-2 text-slate-600 text-sm">Initial intake $160 • 50‑min session $135 • Sliding scale available</p>
+          </div>
+          <div class="reveal rounded-2xl p-6 ring-1 ring-slate-200 bg-slate-50">
+            <h3 class="font-semibold">Superbills</h3>
+            <p class="mt-2 text-slate-600 text-sm">We can provide documentation for out‑of‑network reimbursement.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 sm:py-20 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="reveal text-center max-w-2xl mx-auto">
+          <h2 class="font-display text-3xl sm:text-4xl text-slate-900">What clients say</h2>
+          <p class="mt-3 text-slate-600">Shared with permission; names changed for privacy.</p>
+        </div>
+        <div class="mt-10 grid gap-6 md:grid-cols-3">
+          <figure class="reveal rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+            <blockquote class="text-slate-700">“I finally feel like I have tools that work for me—not just generic advice.”</blockquote>
+            <figcaption class="mt-4 text-sm text-slate-500">— M., 32</figcaption>
+          </figure>
+          <figure class="reveal rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+            <blockquote class="text-slate-700">“Warm, grounded, and practical. Our relationship is in a better place.”</blockquote>
+            <figcaption class="mt-4 text-sm text-slate-500">— A. & R., 29/31</figcaption>
+          </figure>
+          <figure class="reveal rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+            <blockquote class="text-slate-700">“They met me where I was. I feel seen and supported.”</blockquote>
+            <figcaption class="mt-4 text-sm text-slate-500">— T., 17</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-16 sm:py-20 bg-white">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="reveal text-center">
+          <h2 class="font-display text-3xl sm:text-4xl text-slate-900">FAQ</h2>
+          <p class="mt-3 text-slate-600">Quick answers to common questions.</p>
+        </div>
+        <div class="mt-8 space-y-4">
+          <details class="reveal group rounded-xl ring-1 ring-slate-200 p-5 bg-slate-50">
+            <summary class="cursor-pointer font-semibold text-slate-900 flex items-center justify-between">Do you offer telehealth?
+              <span class="ml-4 transition-transform group-open:rotate-90">▶</span>
+            </summary>
+            <p class="mt-3 text-slate-700">Yes. We use a secure, HIPAA‑compliant platform accessible from phone, tablet, or computer.</p>
+          </details>
+          <details class="reveal group rounded-xl ring-1 ring-slate-200 p-5 bg-slate-50">
+            <summary class="cursor-pointer font-semibold text-slate-900 flex items-center justify-between">How do I get matched with a therapist?
+              <span class="ml-4 transition-transform group-open:rotate-90">▶</span>
+            </summary>
+            <p class="mt-3 text-slate-700">Complete the short intake form below and we’ll recommend a match based on your goals and schedule.</p>
+          </details>
+          <details class="reveal group rounded-xl ring-1 ring-slate-200 p-5 bg-slate-50">
+            <summary class="cursor-pointer font-semibold text-slate-900 flex items-center justify-between">What is your cancellation policy?
+              <span class="ml-4 transition-transform group-open:rotate-90">▶</span>
+            </summary>
+            <p class="mt-3 text-slate-700">Please provide 24 hours’ notice to avoid a late cancellation fee.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact / Intake form -->
+    <section id="contact" class="py-16 sm:py-20 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10">
+        <div class="reveal">
+          <h2 class="font-display text-3xl sm:text-4xl text-slate-900">Book a session</h2>
+          <p class="mt-4 text-slate-700">Send a quick message and our intake coordinator will get back to you within 1–2 business days.</p>
+          <div class="mt-6 rounded-2xl p-6 bg-white ring-1 ring-slate-200">
+            <!--
+              For production, connect to your backend, Formspree, or Netlify Forms.
+              The action below is a placeholder mailto (not reliable across devices).
+            -->
+            <form id="intakeForm" class="grid grid-cols-1 gap-4" action="mailto:intake@harbor-mind.example" method="post" enctype="text/plain">
+              <div>
+                <label for="name" class="block text-sm font-medium text-slate-700">Full name</label>
+                <input id="name" name="name" required class="mt-1 w-full rounded-xl border-slate-300 focus:border-brand-500 focus:ring-brand-500" placeholder="Jane Doe" />
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium text-slate-700">Email</label>
+                <input id="email" name="email" type="email" required class="mt-1 w-full rounded-xl border-slate-300 focus:border-brand-500 focus:ring-brand-500" placeholder="jane@example.com" />
+              </div>
+              <div>
+                <label for="phone" class="block text-sm font-medium text-slate-700">Phone (optional)</label>
+                <input id="phone" name="phone" type="tel" class="mt-1 w-full rounded-xl border-slate-300 focus:border-brand-500 focus:ring-brand-500" placeholder="(555) 555‑0199" />
+              </div>
+              <div>
+                <label for="service" class="block text-sm font-medium text-slate-700">Interested in</label>
+                <select id="service" name="service" class="mt-1 w-full rounded-xl border-slate-300 focus:border-brand-500 focus:ring-brand-500">
+                  <option>Individual therapy</option>
+                  <option>Couples therapy</option>
+                  <option>Teen therapy</option>
+                  <option>Consultation</option>
+                </select>
+              </div>
+              <div>
+                <label for="message" class="block text-sm font-medium text-slate-700">Briefly share what brings you in</label>
+                <textarea id="message" name="message" rows="4" class="mt-1 w-full rounded-xl border-slate-300 focus:border-brand-500 focus:ring-brand-500" placeholder="What you’re hoping to work on…"></textarea>
+              </div>
+              <div class="flex items-center gap-3">
+                <input id="consent" name="consent" type="checkbox" required class="h-4 w-4 rounded border-slate-300 text-brand-600 focus:ring-brand-500">
+                <label for="consent" class="text-sm text-slate-600">I consent to being contacted about services. Do not share crisis information—call 988 for emergencies.</label>
+              </div>
+              <button class="inline-flex items-center justify-center rounded-xl bg-brand-600 px-5 py-3 text-white font-semibold shadow-soft hover:bg-brand-700">Submit</button>
+              <p id="formMsg" class="sr-only mt-2 text-sm"></p>
+            </form>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div class="rounded-3xl bg-white p-6 ring-1 ring-slate-200">
+            <h3 class="font-semibold text-lg">Visit us</h3>
+            <p class="mt-2 text-slate-600">123 Harbor Ave Suite 200<br>Riverdale, MI 48123</p>
+            <div class="mt-4">
+              <a class="inline-flex items-center gap-2 rounded-xl border border-slate-300 px-4 py-2 hover:bg-slate-50" href="https://maps.google.com/?q=123+Harbor+Ave+Suite+200+Riverdale+MI" target="_blank" rel="noopener">Open in Maps
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M14 3h7v7h-2V6.41l-6.29 6.3-1.42-1.42 6.3-6.29H14V3z"/></svg>
+              </a>
+            </div>
+            <div class="mt-6 grid grid-cols-2 gap-6">
+              <div>
+                <h4 class="font-semibold">Hours</h4>
+                <p class="mt-1 text-sm text-slate-600">Mon–Thu 9–6 • Fri 9–3</p>
+              </div>
+              <div>
+                <h4 class="font-semibold">Contact</h4>
+                <p class="mt-1 text-sm text-slate-600">(555) 555‑0199<br>intake@harbor‑mind.example</p>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h4 class="font-semibold">If you’re in crisis</h4>
+              <p class="mt-1 text-sm text-slate-600">Call or text <strong>988</strong> (US) or visit your nearest emergency room.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <p class="text-sm text-slate-600">© <span id="year"></span> Connection for Mental Health. All rights reserved.</p>
+      <nav class="flex flex-wrap items-center gap-4 text-sm text-slate-600">
+        <a href="#" class="hover:text-slate-900">Privacy</a>
+        <a href="#" class="hover:text-slate-900">Terms</a>
+        <a href="#" class="hover:text-slate-900">Accessibility</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+    btn?.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      menu.classList.toggle('hidden');
+    });
+
+    // Simple section reveal on scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Lightweight client‑side validation message for the demo form
+    const form = document.getElementById('intakeForm');
+    const msg = document.getElementById('formMsg');
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        // If you wire this to a real backend, remove this block
+        e.preventDefault();
+        msg.classList.remove('sr-only');
+        msg.classList.add('text-brand-700');
+        msg.textContent = 'Thanks! We\'ll reach out within 1–2 business days.';
+        form.reset();
+      });
+    }
+  </script>
+</body>
+</html>
