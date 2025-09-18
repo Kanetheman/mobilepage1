@@ -1,16 +1,16 @@
-<!-- Last functioning version: 2025-09-17 (America/Detroit) -->
+<!-- Last functioning version: 2025-09-18 (America/Detroit) -->
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>The Connection for Mental Health, PLC.</title>
-  <meta name="description" content="Modern, inviting mental health counseling website template. Mobile‑first, accessible, and easy to customize for solo therapists or group practices." />
+  <meta name="description" content="Modern, inviting mental health counseling website template. Mobile-first, accessible, and easy to customize for solo therapists or group practices." />
   <meta name="theme-color" content="#803138" />
 
   <!-- Open Graph / Twitter -->
   <meta property="og:title" content="The Connection for Mental Health, PLC." />
-  <meta property="og:description" content="Compassionate, evidence‑based therapy for individuals, couples, and teens." />
+  <meta property="og:description" content="Compassionate, evidence-based therapy for individuals, couples, and teens." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -22,71 +22,61 @@
 
   <!-- TailwindCSS CDN (for quick start). For production, compile locally. -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <body class="bg-white text-slate-800 antialiased">
-  <!-- Header with new hamburger button -->
-  <header class="sticky top-0 z-40 bg-[#803138] text-white border-b border-white/20">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-  <a href="#home" class="flex items-center gap-3" aria-label="The Connection for Mental Health, PLC. home">
-  <img src="logo.png" alt="The Connection for Mental Health logo" class="h-8 w-auto" loading="lazy" decoding="async"/>
-  <span class="font-display text-lg tracking-tight">The Connection for Mental Health, PLC.</span>
-  </a>
-
-
-  <!-- Desktop nav (optional placeholder) -->
-  <nav class="hidden md:flex items-center gap-8" aria-label="Primary">
-  <a href="#services" class="text-white/90 hover:text-white">Services</a>
-  <a href="#therapists" class="text-white/90 hover:text-white">Therapists</a>
-  <a href="#approach" class="text-white/90 hover:text-white">Approach</a>
-  <a href="#faq" class="text-white/90 hover:text-white">FAQ</a>
-  <a href="#contact" class="inline-flex items-center gap-2 rounded-xl bg-white px-4 py-2 text-[#803138] font-semibold shadow hover:bg-white/90">Get Started</a>
-  </nav>
-
-
-  <!-- New hamburger button -->
-  <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-lg p-2 text-white hover:bg-white/10 focus-visible:outline-white" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
-  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-  <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/>
-  </svg>
-  </button>
-  </div>
-
-
-  <!-- Mobile menu -->
-  <div id="mobileMenu" class="md:hidden hidden border-t border-white/20 bg-[#803138] text-white">
-  <nav class="px-4 py-3 space-y-1" aria-label="Mobile">
-  <a class="block px-3 py-2 rounded-lg hover:bg-white/10" href="#services">Services</a>
-  <a class="block px-3 py-2 rounded-lg hover:bg-white/10" href="#therapists">Therapists</a>
-  <a class="block px-3 py-2 rounded-lg hover:bg-white/10" href="#approach">Approach</a>
-  <a class="block px-3 py-2 rounded-lg hover:bg-white/10" href="#faq">FAQ</a>
-  <a class="block px-3 py-2 rounded-lg hover:bg-white/10" href="#contact">Contact</a>
-  <a class="block px-3 py-2 rounded-lg bg-white text-[#803138] font-semibold" href="#contact">Get Started</a>
-  </nav>
-  </div>
-  </header>
-
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'Apple Color Emoji', 'Segoe UI Emoji'],
+            display: ['Playfair Display', 'ui-serif', 'Georgia', 'serif']
+          },
+          colors: {
+            brand: {
+              50: '#f8f1f2',
+              100: '#f2e8ea',
+              200: '#e5d1d5',
+              300: '#d7b9bf',
+              400: '#b96a70',
+              500: '#9c474d',
+              600: '#803138',
+              700: '#66282d',
+              800: '#4b1f24',
+              900: '#3a181d'
+            }
+          },
+          boxShadow: {
+            soft: '0 10px 25px -10px rgba(2,132,199,0.25)',
+          },
+          backgroundImage: {
+            'hero-gradient': 'radial-gradient(60% 80% at 50% 0%, rgba(128,49,56,0.25) 0%, rgba(156,71,77,0.15) 35%, rgba(255,255,255,0) 70%)',
+          }
+        }
+      }
+    }
+  </script>
   <style>
     /* Subtle fade / slide for section reveals */
     .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
     .reveal.visible { opacity: 1; transform: none; }
     /* Focus ring tweak for accessibility */
     :focus-visible { outline: 2px dashed #0ea5e9; outline-offset: 3px; }
-/* High‑end micro‑interactions */
-@keyframes fadeUp { from { opacity: 0; transform: translateY(12px) } to { opacity: 1; transform: none } }
-@keyframes subtlePop { from { opacity:.8; transform: scale(.98) } to { opacity:1; transform: scale(1) } }
-@keyframes shimmer { 0% { background-position: 0% 50% } 100% { background-position: 100% 50% } }
-.reveal.visible { animation: fadeUp .6s ease forwards; }
-.btn { transition: transform .2s ease, box-shadow .3s ease, background-color .2s ease; }
-.btn:hover { transform: translateY(-2px); box-shadow: 0 18px 30px -12px rgba(128,49,56,.35); }
-.btn:active { transform: translateY(0); }
-.card { transition: transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s ease; }
-.card:hover { transform: translateY(-6px); box-shadow: 0 24px 40px -20px rgba(0,0,0,.25); }
-/* Animated underline for nav links */
-.navlink { position: relative; }
-.navlink:after { content:''; position:absolute; left:0; bottom:-6px; width:100%; height:2px; background: linear-gradient(90deg, #803138, #9c474d); transform: scaleX(0); transform-origin: left; transition: transform .25s ease; }
-.navlink:hover:after, .navlink:focus-visible:after { transform: scaleX(1); }
-</style>
-  
-  <!-- Structured data (customize name, address, hours, etc.) -->
+    /* High-end micro-interactions */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(12px) } to { opacity: 1; transform: none } }
+    @keyframes subtlePop { from { opacity:.8; transform: scale(.98) } to { opacity:1; transform: scale(1) } }
+    @keyframes shimmer { 0% { background-position: 0% 50% } 100% { background-position: 100% 50% } }
+    .reveal.visible { animation: fadeUp .6s ease forwards; }
+    .btn { transition: transform .2s ease, box-shadow .3s ease, background-color .2s ease; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 18px 30px -12px rgba(128,49,56,.35); }
+    .btn:active { transform: translateY(0); }
+    .card { transition: transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s ease; }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 24px 40px -20px rgba(0,0,0,.25); }
+    /* Animated underline for nav links */
+    .navlink { position: relative; }
+    .navlink:after { content:''; position:absolute; left:0; bottom:-6px; width:100%; height:2px; background: linear-gradient(90deg, #803138, #9c474d); transform: scaleX(0); transform-origin: left; transition: transform .25s ease; }
+    .navlink:hover:after, .navlink:focus-visible:after { transform: scaleX(1); }
+  </style>
+
+  <!-- Structured data (VALID JSON-LD) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -107,34 +97,45 @@
     "priceRange": "$$",
     "medicalSpecialty": ["MentalHealth"],
     "openingHoursSpecification": [
-      {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "17:00"}
-    ], "opens": "09:00", "closes": "18:00"},
-      {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "09:00", "closes": "15:00"}
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "08:00",
+        "closes": "17:00"
+      }
     ]
   }
   </script>
 </head>
+
 <body class="bg-white text-slate-800 antialiased">
   <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 bg-white px-3 py-2 rounded-md shadow">Skip to content</a>
 
-  <!-- Header -->
+  <!-- Header (single, cleaned) -->
   <header class="sticky top-0 z-40 bg-brand-600 text-white border-b border-brand-700/40">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
-        <a href="#home" class="flex items-center gap-3" aria-label="Connection for Mental Health, PLC. home">
-          <img src="logo.png" alt="Connection for Mental Health, PLC. logo" class="h-8 w-auto"/>
+        <a href="#home" class="flex items-center gap-3" aria-label="The Connection for Mental Health, PLC. home">
+          <img src="logo.png" alt="The Connection for Mental Health, PLC. logo" class="h-8 w-auto"/>
           <span class="font-display text-xl tracking-tight">The Connection for Mental Health, PLC.</span>
         </a>
 
+        <!-- Desktop nav (kept minimal—customize as you wish) -->
         <nav class="hidden md:flex items-center gap-8" aria-label="Primary">
-          <a href="#services" class="text-white/90 hover:text-white navlink">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M13 5l7 7-7 7v-4H4v-6h9V5z"/></svg>
-              
+          <a href="#services" class="text-white/90 hover:text-white navlink">Services</a>
+          <a href="#therapists" class="text-white/90 hover:text-white navlink">Therapists</a>
+          <a href="#approach" class="text-white/90 hover:text-white navlink">Approach</a>
+          <a href="#faq" class="text-white/90 hover:text-white navlink">FAQ</a>
+          <a href="#contact" class="inline-flex items-center gap-2 rounded-xl bg-white px-4 py-2 text-brand-700 font-semibold shadow hover:bg-white/90 btn">
+            Get Started
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 5l7 7-7 7v-4H4v-6h9V5z"/></svg>
           </a>
-          <button id="menuBtn" class="inline-flex inline-flex items-center justify-center rounded-lg p-2 text-white hover:bg-white/10 focus-visible:outline-white" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
-            <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></svg>
-          </button>
-        </div>
+        </nav>
+
+        <!-- Hamburger -->
+        <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-lg p-2 text-white hover:bg-white/10 focus-visible:outline-white" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+          <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></svg>
+        </button>
       </div>
     </div>
 
@@ -146,7 +147,7 @@
         <a class="block px-3 py-2 rounded-lg hover:bg-white/10" href="#approach">Approach</a>
         <a class="block px-3 py-2 rounded-lg hover:bg-white/10" href="#faq">FAQ</a>
         <a class="block px-3 py-2 rounded-lg hover:bg-white/10" href="#contact">Contact</a>
-        <a class="block px-3 py-2 rounded-lg bg-white text-brand-700" href="#contact">Get Started</a>
+        <a class="block px-3 py-2 rounded-lg bg-white text-brand-700 font-semibold" href="#contact">Get Started</a>
       </nav>
     </div>
   </header>
@@ -156,29 +157,38 @@
     <section id="home" class="relative isolate overflow-hidden">
       <div aria-hidden="true" class="absolute inset-0 -z-10">
         <img src="200emain.jpg" alt="" class="h-full w-full object-cover blur-sm scale-105 saturate-110 brightness-110" loading="lazy" decoding="async"/>
-        <div class="absolute inset-0 bg-black/5"></div>
+        <div class="absolute inset-0 bg-black/5 md:bg-black/5"></div>
       </div>
+
+      <!-- Subtle hero watermark logo (top-left) -->
+      <img src="logo.png" alt="" aria-hidden="true"
+           class="pointer-events-none select-none absolute left-4 top-4 z-0 h-10 w-auto opacity-70 mix-blend-screen md:h-12 md:left-6 md:top-6">
+
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-2 gap-10 items-center py-16 sm:py-20">
           <div class="reveal">
             <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl leading-tight tracking-tight text-white">
-              Add your positive message here later</span>
+              Add your positive message here later
             </h1>
-            <!-- h1, the paragraph, the two buttons, and the status lines -->
-            <p class="mt-6 text-lg text-white/90 max-w-prose drop-shadow-[0_1px_1px_rgba(0,0,0,0.35)]">The Connection for Mental Health, PLC is a confidential counseling service. We provide therapy for individuals, adolescents, children, couples, families and groups. The therapists’ treatment approach is based on the knowledge that thoughts, emotions and behaviors are all connected. Our purpose is to help people make this connection in positive ways, which will allow them to live happier more fulfilled lives.</p>
+            <p class="mt-6 text-lg text-white/90 leading-relaxed max-w-prose drop-shadow-[0_1px_1px_rgba(0,0,0,0.35)]">
+              The Connection for Mental Health, PLC is a confidential counseling service. We provide therapy for individuals, adolescents, children, couples, families and groups. The therapists’ treatment approach is based on the knowledge that thoughts, emotions and behaviors are all connected. Our purpose is to help people make this connection in positive ways, which will allow them to live happier more fulfilled lives.
+            </p>
             <div class="mt-8 flex flex-wrap gap-3">
-              <a href="#contact"class="group inline-flex items-center gap-2 rounded-xl bg-white px-5 py-3 text-brand-700 font-semibold shadow-soft hover:bg-brand-50 btn">Get Started With Us
+              <a href="#contact" class="group inline-flex items-center gap-2 rounded-xl bg-white px-5 py-3 text-brand-700 font-semibold shadow-soft hover:bg-brand-50 btn">
+                Get Started With Us
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path d="M13 5l7 7-7 7v-4H4v-6h9V5z"/>
                 </svg>
               </a>
-              <a href="#services"class="group inline-flex items-center gap-2 rounded-xl border border-white px-5 py-3 font-semibold text-white hover:bg-white/10 btn">Explore services
+              <a href="#services" class="group inline-flex items-center gap-2 rounded-xl border border-white px-5 py-3 font-semibold text-white hover:bg-white/10 btn">
+                Explore services
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path d="M13 5l7 7-7 7v-4H4v-6h9V5z"/>
                 </svg>
               </a>
             </div>
-            <!-- Status row (white text) -->
+
+            <!-- Status row (white text, pulsing indicators) -->
             <div class="mt-6 flex flex-col sm:flex-row sm:items-center sm:gap-6 text-sm text-white/90">
               <div class="space-y-2">
                 <div class="flex items-center gap-2">
@@ -188,7 +198,6 @@
                   </span>
                   <span>Accepting new clients</span>
                 </div>
-
                 <div class="flex items-center gap-2">
                   <span class="relative inline-flex h-2.5 w-2.5">
                     <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping"></span>
@@ -196,7 +205,6 @@
                   </span>
                   <span>Accepting new referrals</span>
                 </div>
-
                 <div class="flex items-center gap-2">
                   <span class="relative inline-flex h-2.5 w-2.5">
                     <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping"></span>
@@ -206,6 +214,8 @@
                 </div>
               </div>
             </div>
+          </div>
+
           <div class="reveal lg:justify-self-end">
             <img class="rounded-3xl shadow-xl ring-1 ring-black/5 w-full max-w-lg mx-auto" src="https://images.unsplash.com/photo-1551847664-5d8748d7b3c6?q=80&w=1200&auto=format&fit=crop" alt="" loading="lazy" decoding="async" onerror="this.hidden=true"/>
           </div>
@@ -283,7 +293,7 @@
           <p class="mt-3 text-slate-600">Some small detail here about everyone..</p>
         </div>
         <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <!-- Therapist card -->
+          <!-- Savannah -->
           <article class="reveal rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-200 card">
             <img class="h-48 w-full object-cover rounded-xl" src="therapists/savannah.png" alt="Therapist portrait" />
             <h3 class="mt-4 font-semibold text-lg">Savannah Crist, LMSW</h3>
@@ -291,18 +301,24 @@
             <p class="mt-3 text-slate-700 text-sm">Savannah is a Licensed Masters Social Worker. She received her Master of Social Work degree from Michigan State University. She has more than ten years experience helping children, adolescents and adults through trauma and grief in a crisis setting. Savannah has training in perinatal mental health, trauma informed parenting, trauma focused cognitive behavioral therapy, play therapy, and motivational interviewing. She also likes working with individuals experiencing anxiety, depression, struggles due to ADHD or life transitions.</p>
             <p class="mt-3 text-sm"><a href="mailto:scrist@connectmh.com" class="text-brand-700 hover:text-brand-900">scrist@connectmh.com</a></p>
           </article>
+
+          <!-- Megan -->
           <article class="reveal rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-200 card">
             <img class="h-48 w-full object-cover rounded-xl" src="therapists/megan.png" alt="Therapist portrait" />
             <h3 class="mt-4 font-semibold text-lg">Megan VanEver, LMSW</h3>
             <p class="text-sm text-slate-600">Megan is a Licensed Masters Social Worker. She received her Master of Social Work degree from the University of Michigan. Megan has over 8 years of experience in community mental health working with children, adolescents, and families. Megan has training in perinatal mental health, trauma focused cognitive behavioral therapy, trauma informed parenting, motivational interviewing, and play therapy. She enjoys working with individuals experiencing difficulties due to ADHD, anxiety, life transitions, or depression</p>
             <p class="mt-3 text-sm"><a href="mailto:mvanever@connectmh.com" class="text-brand-700 hover:text-brand-900">mvanever@connectmh.com</a></p>
           </article>
+
+          <!-- Janis -->
           <article class="reveal rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-200 card">
             <img class="h-48 w-full object-cover rounded-xl" src="therapists/janis.png" alt="Therapist portrait" />
             <h3 class="mt-4 font-semibold text-lg">Janis Duke, LPC</h3>
             <p class="text-sm text-slate-600">Janis is a licensed professional counselor who has been practicing in Midland for 35 years and has worked with individuals, families, couples, and adolescents. Janis has worked with survivors of domestic violence for the last eight years. She is trained in dialectic behavioral therapy, motivational interviewing, cognitive behavioral therapy, internal family systems and trauma recovery. She enjoys working with Veterans, PTSD, anxiety, depression, and relationship issues. Janis is joined by her certified therapy dog, Hamish, who helps provide comfort and support.</p>
             <p class="mt-3 text-sm"><a href="mailto:jduke@connectmh.com" class="text-brand-700 hover:text-brand-900">jduke@connectmh.com</a></p>
           </article>
+
+          <!-- Robin -->
           <article class="reveal rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-200 card">
             <img class="h-48 w-full object-cover rounded-xl" src="therapists/robin.png" alt="Therapist portrait" />
             <h3 class="mt-4 font-semibold text-lg">Robin L. Greiner, LMSW</h3>
@@ -311,6 +327,8 @@
 Robin has specialized training in Eye Movement Desensitization and Reprocessing (EMDR), motivational interviewing, grief, pain, sleep, and Cognitive Behavior Therapy (CBT).</p>
             <p class="mt-3 text-sm"><a href="mailto:rgreiner@connectmh.com" class="text-brand-700 hover:text-brand-900">rgreiner@connectmh.com</a></p>
           </article>
+
+          <!-- Terri -->
           <article class="reveal rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-200 card">
             <img class="h-48 w-full object-cover rounded-xl" src="therapists/terri.png" alt="Therapist portrait" />
             <h3 class="mt-4 font-semibold text-lg">Terri Stevenson, MA, LPC</h3>
@@ -319,6 +337,8 @@ Robin has specialized training in Eye Movement Desensitization and Reprocessing 
 Terri is a trained Spiritual Director and is open to incorporating faith beliefs & spirituality in her sessions if the client wishes. She is trained in Mindfulness Stress Reduction and Meditation which has applications for anxiety, trauma, depression and stress management.</p>
             <p class="mt-3 text-sm"><a href="mailto:tstevenson@connectmh.com" class="text-brand-700 hover:text-brand-900">tstevenson@connectmh.com</a></p>
           </article>
+
+          <!-- Gary -->
           <article class="reveal rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-200 card">
             <img class="h-48 w-full object-cover rounded-xl" src="therapists/gary.png" alt="Therapist portrait" />
             <h3 class="mt-4 font-semibold text-lg">Gary Graham, ACSW, LMSW</h3>
@@ -336,8 +356,8 @@ Terri is a trained Spiritual Director and is open to incorporating faith beliefs
           <h2 class="font-display text-3xl sm:text-4xl text-slate-900">Our approach</h2>
           <p class="mt-4 text-slate-700">Add some kind of message here about what your style is?.</p>
           <ul class="mt-6 space-y-3 text-slate-700">
-            <li class="flex gap-3"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-brand-500"></span><strong>Evidence‑based:</strong> Types of therapy, etc.. here.</li>
-            <li class="flex gap-3"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-brand-500"></span><strong>Whole‑person:</strong> Some other type of information here...</li>
+            <li class="flex gap-3"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-brand-500"></span><strong>Evidence-based:</strong> Types of therapy, etc.. here.</li>
+            <li class="flex gap-3"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-brand-500"></span><strong>Whole-person:</strong> Some other type of information here...</li>
             <li class="flex gap-3"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-brand-500"></span><strong>Flexible:</strong> Other things that make it special here...</li>
           </ul>
         </div>
@@ -352,27 +372,13 @@ Terri is a trained Spiritual Director and is open to incorporating faith beliefs
           <p class="mt-3 text-slate-600">We offer transparent, flexible options. Please verify coverage with your plan</p>
         </div>
         <div class="mt-10 grid gap-6 md:grid-cols-3">
-          <div class="reveal rounded-2xl p-6 ring-1 ring-slate-200 bg-slate-50">
-            <h3 class="font-semibold">Aetna</h3>
-          </div>
-          <div class="reveal rounded-2xl p-6 ring-1 ring-slate-200 bg-slate-50">
-            <h3 class="font-semibold">Blue Care Network PPO</h3>
-          </div>
-          <div class="reveal rounded-2xl p-6 ring-1 ring-slate-200 bg-slate-50">
-            <h3 class="font-semibold">Blue Cross/Blue Shield</h3>
-          </div>
-          <div class="reveal rounded-2xl p-6 ring-1 ring-slate-200 bg-slate-50">
-            <h3 class="font-semibold">Connect Care</h3>
-          </div>
-          <div class="reveal rounded-2xl p-6 ring-1 ring-slate-200 bg-slate-50">
-            <h3 class="font-semibold">Medicare</h3>
-          </div>
-          <div class="reveal rounded-2xl p-6 ring-1 ring-slate-200 bg-slate-50">
-            <h3 class="font-semibold">Priority Health</h3>
-          </div>
-          <div class="reveal rounded-2xl p-6 ring-1 ring-slate-200 bg-slate-50">
-            <h3 class="font-semibold">Tri Care</h3>
-          </div>
+          <div class="reveal rounded-2xl p-6 ring-1 ring-slate-200 bg-slate-50"><h3 class="font-semibold">Aetna</h3></div>
+          <div class="reveal rounded-2xl p-6 ring-1 ring-slate-200 bg-slate-50"><h3 class="font-semibold">Blue Care Network PPO</h3></div>
+          <div class="reveal rounded-2xl p-6 ring-1 ring-slate-200 bg-slate-50"><h3 class="font-semibold">Blue Cross/Blue Shield</h3></div>
+          <div class="reveal rounded-2xl p-6 ring-1 ring-slate-200 bg-slate-50"><h3 class="font-semibold">Connect Care</h3></div>
+          <div class="reveal rounded-2xl p-6 ring-1 ring-slate-200 bg-slate-50"><h3 class="font-semibold">Medicare</h3></div>
+          <div class="reveal rounded-2xl p-6 ring-1 ring-slate-200 bg-slate-50"><h3 class="font-semibold">Priority Health</h3></div>
+          <div class="reveal rounded-2xl p-6 ring-1 ring-slate-200 bg-slate-50"><h3 class="font-semibold">Tri Care</h3></div>
           <div class="reveal rounded-2xl p-6 ring-1 ring-slate-200 bg-slate-50">
             <h3 class="font-semibold">Private Pay</h3>
             <p class="mt-2 text-slate-600 text-sm">Information about private pay options?</p>
@@ -418,10 +424,7 @@ Terri is a trained Spiritual Director and is open to incorporating faith beliefs
           <h2 class="font-display text-3xl sm:text-4xl text-slate-900">Contact us to get started</h2>
           <p class="mt-4 text-slate-700">Send a quick message and our staff will get back to you within 1–2 business days.</p>
           <div class="mt-6 rounded-2xl p-6 bg-white ring-1 ring-slate-200">
-            <!--
-              For production, connect to your backend, Formspree, or Netlify Forms.
-              The action below is a placeholder mailto (not reliable across devices).
-            -->
+            <!-- Replace with your backend / Formspree / Netlify Forms for production -->
             <form id="intakeForm" class="grid grid-cols-1 gap-4" action="mailto:connect@connectmh.com" method="post" enctype="text/plain">
               <div>
                 <label for="name" class="block text-sm font-medium text-slate-700">Full name</label>
@@ -433,7 +436,7 @@ Terri is a trained Spiritual Director and is open to incorporating faith beliefs
               </div>
               <div>
                 <label for="phone" class="block text-sm font-medium text-slate-700">Phone (optional)</label>
-                <input id="phone" name="phone" type="tel" class="mt-1 w-full rounded-xl border-slate-300 focus:border-brand-500 focus:ring-brand-500" placeholder="(555) 555‑0199" />
+                <input id="phone" name="phone" type="tel" class="mt-1 w-full rounded-xl border-slate-300 focus:border-brand-500 focus:ring-brand-500" placeholder="(555) 555-0199" />
               </div>
               <div>
                 <label for="service" class="block text-sm font-medium text-slate-700">Interested in</label>
@@ -499,57 +502,74 @@ Terri is a trained Spiritual Director and is open to incorporating faith beliefs
   </footer>
 
   <script>
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
+    // DOM-ready wrapper (works across mobile browsers)
+    (function() {
+      // Year
+      var yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    // Mobile menu toggle
-    const btn = document.getElementById('menuBtn');
-    const menu = document.getElementById('mobileMenu');
-    const headerEl = document.querySelector('header');
-    const keepMaroon = () => {
-      if (!headerEl) return;
-      headerEl.classList.add('bg-brand-600','text-white');
-      headerEl.classList.remove('bg-white','bg-white/90','supports-[backdrop-filter]:bg-white/70');
-    };
-    btn?.addEventListener('click', () => {
-      const expanded = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', String(!expanded));
-      menu.classList.toggle('hidden');
-      headerEl?.setAttribute('data-menu-open', String(!expanded));
-      keepMaroon();
-    });
-    window.addEventListener('resize', () => {
-      if (window.innerWidth >= 768) {
-        menu?.classList.add('hidden');
-        btn?.setAttribute('aria-expanded','false');
-        headerEl?.removeAttribute('data-menu-open');
+      // Mobile menu toggle (compat: no optional chaining)
+      var btn = document.getElementById('menuBtn');
+      var menu = document.getElementById('mobileMenu');
+      var headerEl = document.querySelector('header');
+      var bodyEl = document.body;
+
+      function keepMaroon(){
+        if (!headerEl) return;
+        headerEl.classList.add('bg-brand-600','text-white');
+        headerEl.classList.remove('bg-white','bg-white/90','supports-[backdrop-filter]:bg-white/70');
       }
+
+      function setExpanded(isOpen){
+        if (!btn || !menu) return;
+        btn.setAttribute('aria-expanded', String(isOpen));
+        if (isOpen) {
+          menu.classList.remove('hidden');
+          headerEl && headerEl.setAttribute('data-menu-open','true');
+          bodyEl && bodyEl.classList.add('overflow-hidden'); // lock scroll behind menu
+        } else {
+          menu.classList.add('hidden');
+          headerEl && headerEl.removeAttribute('data-menu-open');
+          bodyEl && bodyEl.classList.remove('overflow-hidden');
+        }
+        keepMaroon();
+      }
+
+      if (btn && menu) {
+        btn.addEventListener('click', function(){
+          var expanded = btn.getAttribute('aria-expanded') === 'true';
+          setExpanded(!expanded);
+        });
+      }
+
+      // Close menu on resize to md+
+      window.addEventListener('resize', function(){
+        if (window.innerWidth >= 768) setExpanded(false);
+      });
+
+      document.addEventListener('visibilitychange', keepMaroon);
       keepMaroon();
-    });
-    document.addEventListener('visibilitychange', keepMaroon);
-    keepMaroon();
 
-    // Simple section reveal on scroll
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+      // Section reveal on scroll
+      var observer = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){ if (entry.isIntersecting) entry.target.classList.add('visible'); });
+      }, { threshold: 0.1 });
+      var reveals = document.querySelectorAll('.reveal');
+      for (var i=0; i<reveals.length; i++) observer.observe(reveals[i]);
 
-    // Lightweight client‑side validation message for the demo form
-    const form = document.getElementById('intakeForm');
-    const msg = document.getElementById('formMsg');
-    if (form) {
-      form.addEventListener('submit', (e) => {
-        // If you wire this to a real backend, remove this block
-        e.preventDefault();
-        msg.classList.remove('sr-only');
-        msg.classList.add('text-brand-700');
-        msg.textContent = 'Thanks! We\'ll reach out within 1–2 business days.';
-        form.reset();
-      });
-    }
+      // Demo form message (remove when wired to backend)
+      var form = document.getElementById('intakeForm');
+      var msg = document.getElementById('formMsg');
+      if (form && msg) {
+        form.addEventListener('submit', function(e){
+          e.preventDefault();
+          msg.classList.remove('sr-only');
+          msg.classList.add('text-brand-700');
+          msg.textContent = "Thanks! We'll reach out within 1–2 business days.";
+          form.reset();
+        });
+      }
+    })();
   </script>
 </body>
 </html>
