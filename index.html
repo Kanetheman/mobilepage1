@@ -115,16 +115,9 @@
         </a>
 
         <nav class="hidden md:flex items-center gap-8" aria-label="Primary">
-          <a href="#services" class="text-white/90 hover:text-white navlink">Services</a>
-          <a href="#therapists" class="text-white/90 hover:text-white navlink">Therapists</a>
-          <a href="#approach" class="text-white/90 hover:text-white navlink">Approach</a>
-          <a href="#faq" class="text-white/90 hover:text-white navlink">FAQ</a>
-          <a href="#contact" class="text-white/90 hover:text-white navlink">Contact</a>
-        </nav>
-
-        <div class="flex items-center gap-3">
-          <a href="#contact" class="hidden sm:inline-flex items-center gap-2 rounded-xl bg-white px-4 py-2 text-brand-700 font-medium shadow-soft hover:bg-white/90 focus-visible:outline-none">Book a Session
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 5l7 7-7 7v-4H4v-6h9V5z"/></svg>
+          <a href="#services" class="text-white/90 hover:text-white navlink">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M13 5l7 7-7 7v-4H4v-6h9V5z"/></svg>
+              
           </a>
           <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-lg p-2 hover:bg-slate-100" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
             <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></svg>
@@ -148,7 +141,11 @@
 
   <main id="main">
     <!-- Hero -->
-    <section id="home" class="relative isolate overflow-hidden bg-brand-600">
+    <section id="home" class="relative isolate overflow-hidden">
+      <div aria-hidden="true" class="absolute inset-0 -z-10">
+        <img src="200emain.jpeg" alt="" class="h-full w-full object-cover blur-md scale-110" loading="lazy" decoding="async"/>
+        <div class="absolute inset-0 bg-black/25"></div>
+      </div>
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-2 gap-10 items-center py-16 sm:py-20">
           <div class="reveal">
@@ -193,26 +190,47 @@
           <h2 class="font-display text-3xl sm:text-4xl text-slate-900">How we can help</h2>
           <p class="mt-3 text-slate-600">Our therapists have over <strong>50 years</strong> collective experience and ongoing professional training in the treatment of:</p>
         </div>
-        <div class="mt-10">
-          <ul class="flex flex-wrap gap-2 text-sm sm:text-base">
-            <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200">Anxiety</li>
-            <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200">Depression</li>
-            <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200">Grief</li>
-            <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200">Anger Management</li>
-            <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200">Marital/Relationship Problems</li>
-            <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200">Pre-marital Counseling</li>
-            <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200">Stress</li>
-            <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200">Work Related Issues</li>
-            <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200">Perinatal Mental Health</li>
-            <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200">Divorce</li>
-            <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200">PTSD</li>
-            <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200">Bi-Polar Disorder</li>
-            <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200">Behavior Problems in Children</li>
-            <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200">ADD, ADHD</li>
-            <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200">School Related Problems</li>
-            <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200">Child Abuse</li>
-            <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200">Adoption and Attachment Issues</li>
-          </ul>
+        <div class="mt-10 space-y-8">
+          <div>
+            <h3 class="font-semibold text-slate-900 mb-3">Adults</h3>
+            <ul class="flex flex-wrap gap-2 text-sm sm:text-base">
+              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600"><circle cx="12" cy="12" r="10" stroke-width="2"/><path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Anxiety</span></li>
+              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600"><circle cx="12" cy="12" r="10" stroke-width="2"/><path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Depression</span></li>
+              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600"><circle cx="12" cy="12" r="10" stroke-width="2"/><path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Grief</span></li>
+              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600"><circle cx="12" cy="12" r="10" stroke-width="2"/><path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Anger Management</span></li>
+              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600"><circle cx="12" cy="12" r="10" stroke-width="2"/><path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Stress</span></li>
+              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600"><circle cx="12" cy="12" r="10" stroke-width="2"/><path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Work Related Issues</span></li>
+              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600"><circle cx="12" cy="12" r="10" stroke-width="2"/><path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Perinatal Mental Health</span></li>
+              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600"><circle cx="12" cy="12" r="10" stroke-width="2"/><path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>PTSD</span></li>
+              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600"><circle cx="12" cy="12" r="10" stroke-width="2"/><path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Bi-Polar Disorder</span></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 class="font-semibold text-slate-900 mb-3">Couples &amp; Family</h3>
+            <ul class="flex flex-wrap gap-2 text-sm sm:text-base">
+              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600"><circle cx="12" cy="12" r="10" stroke-width="2"/><path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Marital/Relationship Problems</span></li>
+              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600"><circle cx="12" cy="12" r="10" stroke-width="2"/><path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Pre-marital Counseling</span></li>
+              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600"><circle cx="12" cy="12" r="10" stroke-width="2"/><path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Divorce</span></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="font-semibold text-slate-900 mb-3">Children &amp; Adolescents</h3>
+            <ul class="flex flex-wrap gap-2 text-sm sm:text-base">
+              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600"><circle cx="12" cy="12" r="10" stroke-width="2"/><path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Behavior Problems in Children</span></li>
+              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600"><circle cx="12" cy="12" r="10" stroke-width="2"/><path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>ADD, ADHD</span></li>
+              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600"><circle cx="12" cy="12" r="10" stroke-width="2"/><path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>School Related Problems</span></li>
+              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600"><circle cx="12" cy="12" r="10" stroke-width="2"/><path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Child Abuse</span></li>
+              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600"><circle cx="12" cy="12" r="10" stroke-width="2"/><path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Adoption and Attachment Issues</span></li>
+            </ul>
+          </div>
+
+          <p class="pt-2 text-center">
+            <a href="#contact" class="inline-flex items-center gap-2 text-brand-700 hover:text-brand-900 font-semibold">
+              Not sure where to start? Talk to us <span aria-hidden="true">→</span>
+            </a>
+          </p>
         </div>
       </div>
     </section>
@@ -438,11 +456,29 @@
     // Mobile menu toggle
     const btn = document.getElementById('menuBtn');
     const menu = document.getElementById('mobileMenu');
+    const headerEl = document.querySelector('header');
+    const keepMaroon = () => {
+      if (!headerEl) return;
+      headerEl.classList.add('bg-brand-600','text-white');
+      headerEl.classList.remove('bg-white','bg-white/90','supports-[backdrop-filter]:bg-white/70');
+    };
     btn?.addEventListener('click', () => {
       const expanded = btn.getAttribute('aria-expanded') === 'true';
       btn.setAttribute('aria-expanded', String(!expanded));
       menu.classList.toggle('hidden');
+      headerEl?.setAttribute('data-menu-open', String(!expanded));
+      keepMaroon();
     });
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) {
+        menu?.classList.add('hidden');
+        btn?.setAttribute('aria-expanded','false');
+        headerEl?.removeAttribute('data-menu-open');
+      }
+      keepMaroon();
+    });
+    document.addEventListener('visibilitychange', keepMaroon);
+    keepMaroon();
 
     // Simple section reveal on scroll
     const observer = new IntersectionObserver(entries => {
