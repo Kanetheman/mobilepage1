@@ -22,38 +22,48 @@
 
   <!-- TailwindCSS CDN (for quick start). For production, compile locally. -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'Apple Color Emoji', 'Segoe UI Emoji'],
-            display: ['Playfair Display', 'ui-serif', 'Georgia', 'serif']
-          },
-          colors: {
-            brand: {
-              50: '#f8f1f2',
-              100: '#f2e8ea',
-              200: '#e5d1d5',
-              300: '#d7b9bf',
-              400: '#b96a70',
-              500: '#9c474d',
-              600: '#803138',
-              700: '#66282d',
-              800: '#4b1f24',
-              900: '#3a181d'
-            }
-          },
-          boxShadow: {
-            soft: '0 10px 25px -10px rgba(2,132,199,0.25)',
-          },
-          backgroundImage: {
-            'hero-gradient': 'radial-gradient(60% 80% at 50% 0%, rgba(128,49,56,0.25) 0%, rgba(156,71,77,0.15) 35%, rgba(255,255,255,0) 70%)',
-          }
-        }
-      }
-    }
-  </script>
+  <body class="bg-white text-slate-800 antialiased">
+  <!-- Header with new hamburger button -->
+  <header class="sticky top-0 z-40 bg-[#803138] text-white border-b border-white/20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+  <a href="#home" class="flex items-center gap-3" aria-label="The Connection for Mental Health, PLC. home">
+  <img src="logo.png" alt="The Connection for Mental Health logo" class="h-8 w-auto" loading="lazy" decoding="async"/>
+  <span class="font-display text-lg tracking-tight">The Connection for Mental Health, PLC.</span>
+  </a>
+
+
+  <!-- Desktop nav (optional placeholder) -->
+  <nav class="hidden md:flex items-center gap-8" aria-label="Primary">
+  <a href="#services" class="text-white/90 hover:text-white">Services</a>
+  <a href="#therapists" class="text-white/90 hover:text-white">Therapists</a>
+  <a href="#approach" class="text-white/90 hover:text-white">Approach</a>
+  <a href="#faq" class="text-white/90 hover:text-white">FAQ</a>
+  <a href="#contact" class="inline-flex items-center gap-2 rounded-xl bg-white px-4 py-2 text-[#803138] font-semibold shadow hover:bg-white/90">Get Started</a>
+  </nav>
+
+
+  <!-- New hamburger button -->
+  <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-lg p-2 text-white hover:bg-white/10 focus-visible:outline-white" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+  <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/>
+  </svg>
+  </button>
+  </div>
+
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="md:hidden hidden border-t border-white/20 bg-[#803138] text-white">
+  <nav class="px-4 py-3 space-y-1" aria-label="Mobile">
+  <a class="block px-3 py-2 rounded-lg hover:bg-white/10" href="#services">Services</a>
+  <a class="block px-3 py-2 rounded-lg hover:bg-white/10" href="#therapists">Therapists</a>
+  <a class="block px-3 py-2 rounded-lg hover:bg-white/10" href="#approach">Approach</a>
+  <a class="block px-3 py-2 rounded-lg hover:bg-white/10" href="#faq">FAQ</a>
+  <a class="block px-3 py-2 rounded-lg hover:bg-white/10" href="#contact">Contact</a>
+  <a class="block px-3 py-2 rounded-lg bg-white text-[#803138] font-semibold" href="#contact">Get Started</a>
+  </nav>
+  </div>
+  </header>
+
   <style>
     /* Subtle fade / slide for section reveals */
     .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
