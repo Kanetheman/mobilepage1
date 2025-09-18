@@ -116,7 +116,6 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <a href="#home" class="flex items-center gap-3" aria-label="The Connection for Mental Health, PLC. home">
-          <img src="logo.png" alt="The Connection for Mental Health, PLC. logo" class="h-8 w-auto"/>
           <span class="font-display text-xl tracking-tight">The Connection for Mental Health, PLC.</span>
         </a>
 
@@ -160,10 +159,9 @@
         <div class="absolute inset-0 bg-black/5 md:bg-black/5"></div>
       </div>
 
-      <!-- Subtle hero watermark logo (top-left) -->
+      <!-- Subtle hero watermark logo (top-left, ~2x size) -->
       <img src="logo.png" alt="" aria-hidden="true"
-           class="pointer-events-none select-none absolute left-4 top-4 z-0 h-10 w-auto opacity-70 mix-blend-screen md:h-12 md:left-6 md:top-6">
-
+           class="pointer-events-none select-none absolute left-4 top-4 z-0 h-20 w-auto opacity-70 mix-blend-screen md:h-24 md:left-6 md:top-6">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-2 gap-10 items-center py-16 sm:py-20">
           <div class="reveal">
@@ -501,75 +499,94 @@ Terri is a trained Spiritual Director and is open to incorporating faith beliefs
     </div>
   </footer>
 
-  <script>
-    // DOM-ready wrapper (works across mobile browsers)
-    (function() {
-      // Year
-      var yearEl = document.getElementById('year');
-      if (yearEl) yearEl.textContent = new Date().getFullYear();
+<script>
+  // DOM-ready wrapper (works across mobile browsers)
+  (function () {
+    // Year
+    var yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-      // Mobile menu toggle (compat: no optional chaining)
-      var btn = document.getElementById('menuBtn');
-      var menu = document.getElementById('mobileMenu');
-      var headerEl = document.querySelector('header');
-      var bodyEl = document.body;
+    // Mobile menu toggle (compat: no optional chaining)
+    var btn = document.getElementById('menuBtn');
+    var menu = document.getElementById('mobileMenu');
+    var headerEl = document.querySelector('header');
+    var bodyEl = document.body;
 
-      function keepMaroon(){
-        if (!headerEl) return;
-        headerEl.classList.add('bg-brand-600','text-white');
-        headerEl.classList.remove('bg-white','bg-white/90','supports-[backdrop-filter]:bg-white/70');
+    function keepMaroon() {
+      if (!headerEl) return;
+      headerEl.classList.add('bg-brand-600', 'text-white');
+      headerEl.classList.remove('bg-white', 'bg-white/90', 'supports-[backdrop-filter]:bg-white/70');
+    }
+
+    function setExpanded(isOpen) {
+      if (!btn || !menu) return;
+      btn.setAttribute('aria-expanded', String(isOpen));
+      if (isOpen) {
+        menu.classList.remove('hidden');
+        if (headerEl) headerEl.setAttribute('data-menu-open', 'true');
+        if (bodyEl) bodyEl.classList.add('overflow-hidden'); // lock scroll behind menu
+      } else {
+        menu.classList.add('hidden');
+        if (headerEl) headerEl.removeAttribute('data-menu-open');
+        if (bodyEl) bodyEl.classList.remove('overflow-hidden');
       }
-
-      function setExpanded(isOpen){
-        if (!btn || !menu) return;
-        btn.setAttribute('aria-expanded', String(isOpen));
-        if (isOpen) {
-          menu.classList.remove('hidden');
-          headerEl && headerEl.setAttribute('data-menu-open','true');
-          bodyEl && bodyEl.classList.add('overflow-hidden'); // lock scroll behind menu
-        } else {
-          menu.classList.add('hidden');
-          headerEl && headerEl.removeAttribute('data-menu-open');
-          bodyEl && bodyEl.classList.remove('overflow-hidden');
-        }
-        keepMaroon();
-      }
-
-      if (btn && menu) {
-        btn.addEventListener('click', function(){
-          var expanded = btn.getAttribute('aria-expanded') === 'true';
-          setExpanded(!expanded);
-        });
-      }
-
-      // Close menu on resize to md+
-      window.addEventListener('resize', function(){
-        if (window.innerWidth >= 768) setExpanded(false);
-      });
-
-      document.addEventListener('visibilitychange', keepMaroon);
       keepMaroon();
+    }
 
-      // Section reveal on scroll
-      var observer = new IntersectionObserver(function(entries){
-        entries.forEach(function(entry){ if (entry.isIntersecting) entry.target.classList.add('visible'); });
-      }, { threshold: 0.1 });
-      var reveals = document.querySelectorAll('.reveal');
-      for (var i=0; i<reveals.length; i++) observer.observe(reveals[i]);
+    // Toggle via hamburger button
+    if (btn && menu) {
+      btn.addEventListener('click', function () {
+        var expanded = btn.getAttribute('aria-expanded') === 'true';
+        setExpanded(!expanded);
+      });
+    }
 
-      // Demo form message (remove when wired to backend)
-      var form = document.getElementById('intakeForm');
-      var msg = document.getElementById('formMsg');
-      if (form && msg) {
-        form.addEventListener('submit', function(e){
-          e.preventDefault();
-          msg.classList.remove('sr-only');
-          msg.classList.add('text-brand-700');
-          msg.textContent = "Thanks! We'll reach out within 1–2 business days.";
-          form.reset();
-        });
-      }
-    })();
-  </script>
+    // ✅ Auto-close when any mobile menu link is clicked
+    var menuLinks = document.querySelectorAll('#mobileMenu a');
+    for (var i = 0; i < menuLinks.length; i++) {
+      menuLinks[i].addEventListener('click', function () {
+        setExpanded(false);
+      });
+    }
+
+    // ✅ Close on Esc key
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') setExpanded(false);
+    });
+
+    // ✅ Close on hash change (anchor jumps)
+    window.addEventListener('hashchange', function () {
+      setExpanded(false);
+    });
+
+    // Close menu on resize to md+
+    window.addEventListener('resize', function () {
+      if (window.innerWidth >= 768) setExpanded(false);
+    });
+
+    document.addEventListener('visibilitychange', keepMaroon);
+    keepMaroon();
+
+    // Section reveal on scroll
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    var reveals = document.querySelectorAll('.reveal');
+    for (var j = 0; j < reveals.length; j++) observer.observe(reveals[j]);
+
+    // Demo form message (remove when wired to backend)
+    var form = document.getElementById('intakeForm');
+    var msg = document.getElementById('formMsg');
+    if (form && msg) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        msg.classList.remove('sr-only');
+        msg.classList.add('text-brand-700');
+        msg.textContent = "Thanks! We'll reach out within 1–2 business days.";
+        form.reset();
+      });
+    }
+  })();
+</script>
 </body>
 </html>
