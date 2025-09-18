@@ -84,20 +84,21 @@
     "name": "Connection for Mental Health, PLC.",
     "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop",
     "url": "https://www.harbor-mind.example/",
-    "telephone": "+1-555-555-0199",
+    "telephone": "989-633-9021",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "123 Harbor Ave Suite 200",
-      "addressLocality": "Riverdale",
+      "streetAddress": "200 E Main St, #200, 2nd Floor",
+      "addressLocality": "Midland",
       "addressRegion": "MI",
-      "postalCode": "48123",
+      "postalCode": "48640",
       "addressCountry": "US"
     },
     "areaServed": "US",
     "priceRange": "$$",
     "medicalSpecialty": ["MentalHealth"],
     "openingHoursSpecification": [
-      {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "09:00", "closes": "18:00"},
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "17:00"}
+    ], "opens": "09:00", "closes": "18:00"},
       {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "09:00", "closes": "15:00"}
     ]
   }
@@ -375,7 +376,7 @@
               For production, connect to your backend, Formspree, or Netlify Forms.
               The action below is a placeholder mailto (not reliable across devices).
             -->
-            <form id="intakeForm" class="grid grid-cols-1 gap-4" action="mailto:intake@harbor-mind.example" method="post" enctype="text/plain">
+            <form id="intakeForm" class="grid grid-cols-1 gap-4" action="mailto:connect@connectmh.com" method="post" enctype="text/plain">
               <div>
                 <label for="name" class="block text-sm font-medium text-slate-700">Full name</label>
                 <input id="name" name="name" required class="mt-1 w-full rounded-xl border-slate-300 focus:border-brand-500 focus:ring-brand-500" placeholder="Jane Doe" />
@@ -414,20 +415,20 @@
         <div class="reveal">
           <div class="rounded-3xl bg-white p-6 ring-1 ring-slate-200">
             <h3 class="font-semibold text-lg">Visit us</h3>
-            <p class="mt-2 text-slate-600">123 Harbor Ave Suite 200<br>Riverdale, MI 48123</p>
+            <p class="mt-2 text-slate-600">Tri-Star Building<br>200 E Main St, #200, 2nd Floor<br>Midland, MI 48640</p>
             <div class="mt-4">
-              <a class="inline-flex items-center gap-2 rounded-xl border border-slate-300 px-4 py-2 hover:bg-slate-50" href="https://maps.google.com/?q=123+Harbor+Ave+Suite+200+Riverdale+MI" target="_blank" rel="noopener">Open in Maps
+              <a class="inline-flex items-center gap-2 rounded-xl border border-slate-300 px-4 py-2 hover:bg-slate-50" href="https://maps.google.com/?q=200+E+Main+St+%23200%2C+Midland%2C+MI+48640" target="_blank" rel="noopener">Open in Maps
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M14 3h7v7h-2V6.41l-6.29 6.3-1.42-1.42 6.3-6.29H14V3z"/></svg>
               </a>
             </div>
             <div class="mt-6 grid grid-cols-2 gap-6">
               <div>
                 <h4 class="font-semibold">Hours</h4>
-                <p class="mt-1 text-sm text-slate-600">Mon–Thu 9–6 • Fri 9–3</p>
+                <p class="mt-1 text-sm text-slate-600">8:00 a.m. – 5:00 p.m. Monday through Friday; evening hours by appointment.</p>
               </div>
               <div>
                 <h4 class="font-semibold">Contact</h4>
-                <p class="mt-1 text-sm text-slate-600">(555) 555‑0199<br>intake@harbor‑mind.example</p>
+                <p class="mt-1 text-sm text-slate-600">989-633-9021<br>connect@connectmh.com</p>
               </div>
             </div>
             <div class="mt-6">
