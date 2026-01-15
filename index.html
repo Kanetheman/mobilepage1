@@ -1,33 +1,61 @@
-<!-- Last functioning version: 2025-09-18 (America/Detroit) -->
 <!doctype html>
 <html lang="en">
 <head>
+  <!-- =========================================================
+    META
+  ========================================================== -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>The Connection for Mental Health, PLC.</title>
-  <meta name="description" content="Modern, inviting mental health counseling website template. Mobile-first, accessible, and easy to customize for solo therapists or group practices." />
+  <meta
+    name="description"
+    content="Modern, inviting mental health counseling website template. Mobile-first, accessible, and easy to customize for solo therapists or group practices."
+  />
   <meta name="theme-color" content="#803138" />
 
-  <!-- Open Graph / Twitter -->
+  <!-- =========================================================
+    OPEN GRAPH / TWITTER
+  ========================================================== -->
   <meta property="og:title" content="The Connection for Mental Health, PLC." />
   <meta property="og:description" content="Compassionate, evidence-based therapy for individuals, couples, and teens." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" />
+  <meta
+    property="og:image"
+    content="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop"
+  />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Fonts -->
+  <!-- =========================================================
+    FONTS
+  ========================================================== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  >
 
-  <!-- TailwindCSS CDN (for quick start). For production, compile locally. -->
+  <!-- =========================================================
+    TAILWIND (CDN)
+    NOTE: For production, compile locally.
+  ========================================================== -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           fontFamily: {
-            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'Apple Color Emoji', 'Segoe UI Emoji'],
+            sans: [
+              'Inter',
+              'ui-sans-serif',
+              'system-ui',
+              'Segoe UI',
+              'Roboto',
+              'Helvetica',
+              'Arial',
+              'Apple Color Emoji',
+              'Segoe UI Emoji'
+            ],
             display: ['Playfair Display', 'ui-serif', 'Georgia', 'serif']
           },
           colors: {
@@ -45,38 +73,94 @@
             }
           },
           boxShadow: {
-            soft: '0 10px 25px -10px rgba(2,132,199,0.25)',
+            soft: '0 10px 25px -10px rgba(2,132,199,0.25)'
           },
           backgroundImage: {
-            'hero-gradient': 'radial-gradient(60% 80% at 50% 0%, rgba(128,49,56,0.25) 0%, rgba(156,71,77,0.15) 35%, rgba(255,255,255,0) 70%)',
+            'hero-gradient':
+              'radial-gradient(60% 80% at 50% 0%, rgba(128,49,56,0.25) 0%, rgba(156,71,77,0.15) 35%, rgba(255,255,255,0) 70%)'
           }
         }
       }
-    }
+    };
   </script>
+
+  <!-- =========================================================
+    CUSTOM CSS
+    (Grouped & labeled for readability)
+  ========================================================== -->
   <style>
-    /* Subtle fade / slide for section reveals */
-    .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
-    .reveal.visible { opacity: 1; transform: none; }
-    /* Focus ring tweak for accessibility */
-    :focus-visible { outline: 2px dashed #0ea5e9; outline-offset: 3px; }
-    /* High-end micro-interactions */
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(12px) } to { opacity: 1; transform: none } }
-    @keyframes subtlePop { from { opacity:.8; transform: scale(.98) } to { opacity:1; transform: scale(1) } }
-    @keyframes shimmer { 0% { background-position: 0% 50% } 100% { background-position: 100% 50% } }
-    .reveal.visible { animation: fadeUp .6s ease forwards; }
-    .btn { transition: transform .2s ease, box-shadow .3s ease, background-color .2s ease; }
-    .btn:hover { transform: translateY(-2px); box-shadow: 0 18px 30px -12px rgba(128,49,56,.35); }
+    /* ========== A11Y ========== */
+    :focus-visible {
+      outline: 2px dashed #0ea5e9;
+      outline-offset: 3px;
+    }
+
+    /* ========== REVEAL ANIMATION ========== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+      animation: fadeUp .6s ease forwards;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: none; }
+    }
+
+    /* ========== BUTTONS / CARDS (micro-interactions) ========== */
+    .btn {
+      transition: transform .2s ease, box-shadow .3s ease, background-color .2s ease, border-color .2s ease;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 30px -12px rgba(128,49,56,.35);
+    }
     .btn:active { transform: translateY(0); }
-    .card { transition: transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s ease; }
-    .card:hover { transform: translateY(-6px); box-shadow: 0 24px 40px -20px rgba(0,0,0,.25); }
-    /* Animated underline for nav links */
+
+    .card {
+      transition: transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 40px -20px rgba(0,0,0,.25);
+    }
+
+    /* ========== NAV UNDERLINE ========== */
     .navlink { position: relative; }
-    .navlink:after { content:''; position:absolute; left:0; bottom:-6px; width:100%; height:2px; background: linear-gradient(90deg, #803138, #9c474d); transform: scaleX(0); transform-origin: left; transition: transform .25s ease; }
-    .navlink:hover:after, .navlink:focus-visible:after { transform: scaleX(1); }
+    .navlink:after {
+      content:'';
+      position:absolute;
+      left:0;
+      bottom:-6px;
+      width:100%;
+      height:2px;
+      background: linear-gradient(90deg, #803138, #9c474d);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .25s ease;
+    }
+    .navlink:hover:after,
+    .navlink:focus-visible:after {
+      transform: scaleX(1);
+    }
+
+    /* ========== SIMPLE “SEMANTIC” HELPERS (optional) ========== */
+    .container-x {
+      max-width: 80rem; /* ~max-w-7xl */
+      margin: 0 auto;
+      padding: 0 1rem; /* px-4 */
+    }
+    @media (min-width: 640px) { .container-x { padding: 0 1.5rem; } } /* sm:px-6 */
+    @media (min-width: 1024px) { .container-x { padding: 0 2rem; } }  /* lg:px-8 */
   </style>
 
-  <!-- Structured data (VALID JSON-LD) -->
+  <!-- =========================================================
+    STRUCTURED DATA (VALID JSON-LD)
+  ========================================================== -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -109,33 +193,61 @@
 </head>
 
 <body class="bg-white text-slate-800 antialiased">
-  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 bg-white px-3 py-2 rounded-md shadow">Skip to content</a>
 
-  <!-- Header (single, cleaned) -->
+  <!-- =========================================================
+    SKIP LINK
+  ========================================================== -->
+  <a
+    href="#main"
+    class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 bg-white px-3 py-2 rounded-md shadow"
+  >
+    Skip to content
+  </a>
+
+  <!-- =========================================================
+    HEADER
+  ========================================================== -->
   <header class="sticky top-0 z-40 bg-brand-600 text-white border-b border-brand-700/40">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="container-x">
       <div class="flex items-center justify-between h-16">
+
+        <!-- Logo -->
         <a href="#home" class="flex items-center gap-3" aria-label="The Connection for Mental Health, PLC. home">
           <img src="logo.png" alt="The Connection for Mental Health, PLC. logo" class="h-8 w-auto"/>
           <span class="font-display text-xl tracking-tight">The Connection for Mental Health, PLC.</span>
         </a>
 
-        <!-- Desktop nav (kept minimal—customize as you wish) -->
+        <!-- Desktop nav -->
         <nav class="hidden md:flex items-center gap-8" aria-label="Primary">
           <a href="#services" class="text-white/90 hover:text-white navlink">Services</a>
           <a href="#therapists" class="text-white/90 hover:text-white navlink">Therapists</a>
           <a href="#approach" class="text-white/90 hover:text-white navlink">Approach</a>
           <a href="#faq" class="text-white/90 hover:text-white navlink">FAQ</a>
-          <a href="#contact" class="inline-flex items-center gap-2 rounded-xl bg-white px-4 py-2 text-brand-700 font-semibold shadow hover:bg-white/90 btn">
+
+          <a
+            href="#contact"
+            class="inline-flex items-center gap-2 rounded-xl bg-white px-4 py-2 text-brand-700 font-semibold shadow hover:bg-white/90 btn"
+          >
             Get Started
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 5l7 7-7 7v-4H4v-6h9V5z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M13 5l7 7-7 7v-4H4v-6h9V5z"/>
+            </svg>
           </a>
         </nav>
 
-        <!-- Hamburger -->
-        <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-lg p-2 text-white hover:bg-white/10 focus-visible:outline-white" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
-          <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></svg>
+        <!-- Mobile toggle -->
+        <button
+          id="menuBtn"
+          class="md:hidden inline-flex items-center justify-center rounded-lg p-2 text-white hover:bg-white/10 focus-visible:outline-white"
+          aria-expanded="false"
+          aria-controls="mobileMenu"
+          aria-label="Open menu"
+        >
+          <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/>
+          </svg>
         </button>
+
       </div>
     </div>
 
@@ -153,123 +265,293 @@
   </header>
 
   <main id="main">
-    <!-- Hero -->
+
+    <!-- =========================================================
+      HERO
+    ========================================================== -->
     <section id="home" class="relative isolate overflow-hidden">
-    <div aria-hidden="true" class="absolute inset-0 -z-10">
-      <img src="200emain.jpg" alt=""
-           class="h-full w-full object-cover blur-sm scale-105 saturate-110 brightness-110"
-           loading="lazy" decoding="async"/>
-      <div class="absolute inset-0 bg-gradient-to-r from-black/55 via-black/35 to-black/15"></div>
-      <div class="absolute inset-0 bg-hero-gradient"></div>
-    </div>
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Background image + overlays -->
+      <div aria-hidden="true" class="absolute inset-0 -z-10">
+        <img
+          src="200emain.jpg"
+          alt=""
+          class="h-full w-full object-cover blur-sm scale-105 saturate-110 brightness-110"
+          loading="lazy"
+          decoding="async"
+        />
+        <!-- Base overlay: mobile stronger, desktop slightly lighter -->
+        <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/45 to-black/20 sm:from-black/55 sm:via-black/35 sm:to-black/15"></div>
+        <div class="absolute inset-0 bg-hero-gradient"></div>
+      </div>
+
+      <div class="container-x">
         <div class="grid lg:grid-cols-2 gap-10 items-center py-16 sm:py-20">
-        <div class="reveal">
-          <div class="relative rounded-3xl border border-white/20 bg-brand-900/35 backdrop-blur-2xl shadow-2xl ring-1 ring-black/30 p-6 sm:p-8">
-            <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl leading-tight tracking-tight text-white drop-shadow-sm">
-              Add your positive message here later
-            </h1>
 
-            <p class="mt-6 text-lg leading-relaxed text-white/90 max-w-prose">
-              The Connection for Mental Health, PLC is a confidential counseling service. We provide therapy for individuals, adolescents, children, couples, families and groups. The therapists’ treatment approach is based on the knowledge that thoughts, emotions and behaviors are all connected. Our purpose is to help people make this connection in positive ways, which will allow them to live happier more fulfilled lives.
-            </p>
+          <!-- Left: hero copy -->
+          <div class="reveal">
 
-            <div class="mt-8 flex flex-wrap gap-3">
-              <a href="#contact"
-                 class="group inline-flex items-center gap-2 rounded-xl bg-white/95 px-5 py-3 text-brand-700 font-semibold shadow-soft hover:bg-white btn">
-                Get Started With Us
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M13 5l7 7-7 7v-4H4v-6h9V5z"/>
-                </svg>
-              </a>
+            <!-- “Glass” panel (kept readable on mobile) -->
+            <div class="relative max-w-xl">
+              <!-- local scrim behind the glass for readability -->
+              <div class="absolute -inset-2 rounded-[28px] bg-black/45 sm:bg-black/30 blur-md"></div>
 
-              <a href="#services"
-                 class="group inline-flex items-center gap-2 rounded-xl border border-white/35 bg-white/10 px-5 py-3 text-white font-semibold hover:bg-white/15 btn">
-                Explore services
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M13 5l7 7-7 7v-4H4v-6h9V5z"/>
-                </svg>
-              </a>
+              <div class="relative rounded-3xl border border-white/30 bg-white/22 backdrop-blur-2xl shadow-2xl ring-1 ring-black/20 p-6 sm:p-8">
+                <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl leading-tight tracking-tight text-white drop-shadow-sm">
+                  Add your positive message here later
+                </h1>
 
-              <a href="https://connectionformentalhealth.sessionshealth.com/clients/sign_in" target="_blank" rel="noopener"
-                 class="group inline-flex items-center gap-2 rounded-xl border border-white/35 bg-white/10 px-5 py-3 text-white font-semibold hover:bg-white/15 btn">
-                <img src="sessionshealth.png" alt="Sessions Client Portal" class="h-5 w-auto md:h-6" />
-                Client Portal
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M13 5l7 7-7 7v-4H4v-6h9V5z"/>
-                </svg>
-              </a>
-            </div>
+                <p class="mt-6 text-lg text-white/90 leading-relaxed max-w-prose">
+                  The Connection for Mental Health, PLC is a confidential counseling service. We provide therapy for
+                  individuals, adolescents, children, couples, families and groups. The therapists’ treatment approach is
+                  based on the knowledge that thoughts, emotions and behaviors are all connected. Our purpose is to help
+                  people make this connection in positive ways, which will allow them to live happier more fulfilled lives.
+                </p>
 
-            <div class="mt-6 text-sm text-white/90">
-              <div class="flex items-center gap-2">
-                <span class="relative inline-flex h-2.5 w-2.5">
-                  <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping"></span>
-                  <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-green-500"></span>
-                </span>
-                <span>Accepting new clients</span>
+                <div class="mt-8 flex flex-wrap gap-3">
+                  <a
+                    href="#contact"
+                    class="group inline-flex items-center gap-2 rounded-xl bg-white/95 px-5 py-3 text-brand-700 font-semibold shadow-soft hover:bg-white btn"
+                  >
+                    Get Started With Us
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M13 5l7 7-7 7v-4H4v-6h9V5z"/>
+                    </svg>
+                  </a>
+
+                  <a
+                    href="#services"
+                    class="group inline-flex items-center gap-2 rounded-xl border border-white/35 bg-white/10 px-5 py-3 text-white font-semibold hover:bg-white/15 btn"
+                  >
+                    Explore services
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M13 5l7 7-7 7v-4H4v-6h9V5z"/>
+                    </svg>
+                  </a>
+
+                  <a
+                    href="https://connectionformentalhealth.sessionshealth.com/clients/sign_in"
+                    target="_blank"
+                    rel="noopener"
+                    class="group inline-flex items-center gap-2 rounded-xl border border-white/35 bg-white/10 px-5 py-3 text-white font-semibold hover:bg-white/15 btn"
+                  >
+                    <img src="sessionshealth.png" alt="Sessions Client Portal" class="h-5 w-auto md:h-6" />
+                    Client Portal
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M13 5l7 7-7 7v-4H4v-6h9V5z"/>
+                    </svg>
+                  </a>
+                </div>
+
+                <!-- Status row -->
+                <div class="mt-6 flex flex-col sm:flex-row sm:items-center sm:gap-6 text-sm text-white/90">
+                  <div class="space-y-2">
+                    <div class="flex items-center gap-2">
+                      <span class="relative inline-flex h-2.5 w-2.5">
+                        <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping"></span>
+                        <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-green-500"></span>
+                      </span>
+                      <span>Accepting new clients</span>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
-        </div>
 
+          <!-- Right: optional image -->
           <div class="reveal lg:justify-self-end">
-            <img class="rounded-3xl shadow-xl ring-1 ring-black/5 w-full max-w-lg mx-auto" src="https://images.unsplash.com/photo-1551847664-5d8748d7b3c6?q=80&w=1200&auto=format&fit=crop" alt="" loading="lazy" decoding="async" onerror="this.hidden=true"/>
+            <img
+              class="rounded-3xl shadow-xl ring-1 ring-black/5 w-full max-w-lg mx-auto"
+              src="https://images.unsplash.com/photo-1551847664-5d8748d7b3c6?q=80&w=1200&auto=format&fit=crop"
+              alt=""
+              loading="lazy"
+              decoding="async"
+              onerror="this.hidden=true"
+            />
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Trust badges / quick facts -->
+    <!-- =========================================================
+      TRUST BADGES / QUICK FACTS
+    ========================================================== -->
     <section class="py-10 border-y border-slate-100 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
-        <div class="reveal"><p class="text-3xl font-bold text-brand-700">XXX</p><p class="text-slate-600">Years in practice</p></div>
-        <div class="reveal"><p class="text-3xl font-bold text-brand-700">Other</p><p class="text-slate-600">facts</p></div>
-        <div class="reveal"><p class="text-3xl font-bold text-brand-700">Other</p><p class="text-slate-600">facts</p></div>
-        <div class="reveal"><p class="text-3xl font-bold text-brand-700">Other</p><p class="text-slate-600">facts</p></div>
+      <div class="container-x grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+        <div class="reveal">
+          <p class="text-3xl font-bold text-brand-700">XXX</p>
+          <p class="text-slate-600">Years in practice</p>
+        </div>
+        <div class="reveal">
+          <p class="text-3xl font-bold text-brand-700">Other</p>
+          <p class="text-slate-600">facts</p>
+        </div>
+        <div class="reveal">
+          <p class="text-3xl font-bold text-brand-700">Other</p>
+          <p class="text-slate-600">facts</p>
+        </div>
+        <div class="reveal">
+          <p class="text-3xl font-bold text-brand-700">Other</p>
+          <p class="text-slate-600">facts</p>
+        </div>
       </div>
     </section>
 
-    <!-- Services -->
+    <!-- =========================================================
+      SERVICES
+    ========================================================== -->
     <section id="services" class="py-16 sm:py-20 bg-slate-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="container-x">
         <div class="reveal text-center max-w-2xl mx-auto">
           <h2 class="font-display text-3xl sm:text-4xl text-slate-900">How we can help</h2>
-          <p class="mt-3 text-slate-600">Our therapists have over <strong>50 years</strong> collective experience and ongoing professional training in the treatment of:</p>
+          <p class="mt-3 text-slate-600">
+            Our therapists have over <strong>50 years</strong> collective experience and ongoing professional training in the
+            treatment of:
+          </p>
         </div>
+
         <div class="mt-10 space-y-8">
+          <!-- Adults -->
           <div>
             <h3 class="font-semibold text-slate-900 mb-3">Adults</h3>
             <ul class="flex flex-wrap gap-2 text-sm sm:text-base">
-              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600"><circle cx="12" cy="12" r="10" stroke-width="2"/><path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Anxiety</span></li>
-              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600"><circle cx="12" cy="12" r="10" stroke-width="2"/><path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Depression</span></li>
-              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600"><circle cx="12" cy="12" r="10" stroke-width="2"/><path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Grief</span></li>
-              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600"><circle cx="12" cy="12" r="10" stroke-width="2"/><path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Anger Management</span></li>
-              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600"><circle cx="12" cy="12" r="10" stroke-width="2"/><path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Stress</span></li>
-              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600"><circle cx="12" cy="12" r="10" stroke-width="2"/><path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Work Related Issues</span></li>
-              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600"><circle cx="12" cy="12" r="10" stroke-width="2"/><path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Perinatal Mental Health</span></li>
-              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600"><circle cx="12" cy="12" r="10" stroke-width="2"/><path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>PTSD</span></li>
-              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600"><circle cx="12" cy="12" r="10" stroke-width="2"/><path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Bi-Polar Disorder</span></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h3 class="font-semibold text-slate-900 mb-3">Couples &amp; Family</h3>
-            <ul class="flex flex-wrap gap-2 text-sm sm:text-base">
-              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600"><circle cx="12" cy="12" r="10" stroke-width="2"/><path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Marital/Relationship Problems</span></li>
-              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600"><circle cx="12" cy="12" r="10" stroke-width="2"/><path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Pre-marital Counseling</span></li>
-              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600"><circle cx="12" cy="12" r="10" stroke-width="2"/><path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Divorce</span></li>
+              <!-- CHIP -->
+              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600">
+                  <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                  <path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Anxiety</span>
+              </li>
+              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600">
+                  <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                  <path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Depression</span>
+              </li>
+              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600">
+                  <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                  <path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Grief</span>
+              </li>
+              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600">
+                  <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                  <path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Anger Management</span>
+              </li>
+              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600">
+                  <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                  <path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Stress</span>
+              </li>
+              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600">
+                  <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                  <path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Work Related Issues</span>
+              </li>
+              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600">
+                  <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                  <path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Perinatal Mental Health</span>
+              </li>
+              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600">
+                  <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                  <path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>PTSD</span>
+              </li>
+              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600">
+                  <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                  <path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Bi-Polar Disorder</span>
+              </li>
             </ul>
           </div>
 
+          <!-- Couples & Family -->
+          <div>
+            <h3 class="font-semibold text-slate-900 mb-3">Couples &amp; Family</h3>
+            <ul class="flex flex-wrap gap-2 text-sm sm:text-base">
+              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600">
+                  <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                  <path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Marital/Relationship Problems</span>
+              </li>
+              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600">
+                  <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                  <path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Pre-marital Counseling</span>
+              </li>
+              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600">
+                  <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                  <path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Divorce</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Children & Adolescents -->
           <div>
             <h3 class="font-semibold text-slate-900 mb-3">Children &amp; Adolescents</h3>
             <ul class="flex flex-wrap gap-2 text-sm sm:text-base">
-              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600"><circle cx="12" cy="12" r="10" stroke-width="2"/><path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Behavior Problems in Children</span></li>
-              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600"><circle cx="12" cy="12" r="10" stroke-width="2"/><path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>ADD, ADHD</span></li>
-              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600"><circle cx="12" cy="12" r="10" stroke-width="2"/><path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>School Related Problems</span></li>
-              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600"><circle cx="12" cy="12" r="10" stroke-width="2"/><path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Child Abuse</span></li>
-              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600"><circle cx="12" cy="12" r="10" stroke-width="2"/><path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Adoption and Attachment Issues</span></li>
+              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600">
+                  <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                  <path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Behavior Problems in Children</span>
+              </li>
+              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600">
+                  <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                  <path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>ADD, ADHD</span>
+              </li>
+              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600">
+                  <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                  <path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>School Related Problems</span>
+              </li>
+              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600">
+                  <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                  <path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Child Abuse</span>
+              </li>
+              <li class="px-3 py-2 rounded-full bg-white ring-1 ring-slate-200 inline-flex items-center gap-2">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-brand-600">
+                  <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                  <path d="M16 8l-5 6-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Adoption and Attachment Issues</span>
+              </li>
             </ul>
           </div>
 
@@ -282,92 +564,171 @@
       </div>
     </section>
 
-    <!-- Therapists -->
+    <!-- =========================================================
+      THERAPISTS
+    ========================================================== -->
     <section id="therapists" class="py-16 sm:py-20 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="container-x">
         <div class="reveal text-center max-w-2xl mx-auto">
           <h2 class="font-display text-3xl sm:text-4xl text-slate-900">Meet our therapists</h2>
           <p class="mt-3 text-slate-600">Some small detail here about everyone..</p>
         </div>
+
         <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
           <!-- Savannah -->
           <article class="reveal rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-200 card">
             <img class="h-48 w-full object-cover rounded-xl" src="therapists/savannah.png" alt="Therapist portrait" />
             <h3 class="mt-4 font-semibold text-lg">Savannah Crist, LMSW</h3>
             <p class="text-sm text-slate-600">Trauma • Grief • Perinatal Mental Health • Anxiety • Depression • ADHD • Life Transitions</p>
-            <p class="mt-3 text-slate-700 text-sm">Savannah is a Licensed Masters Social Worker. She received her Master of Social Work degree from Michigan State University. She has more than ten years experience helping children, adolescents and adults through trauma and grief in a crisis setting. Savannah has training in perinatal mental health, trauma informed parenting, trauma focused cognitive behavioral therapy, play therapy, and motivational interviewing. She also likes working with individuals experiencing anxiety, depression, struggles due to ADHD or life transitions.</p>
-            <p class="mt-3 text-sm"><a href="mailto:scrist@connectmh.com" class="text-brand-700 hover:text-brand-900">scrist@connectmh.com</a></p>
+            <p class="mt-3 text-slate-700 text-sm">
+              Savannah is a Licensed Masters Social Worker. She received her Master of Social Work degree from Michigan State
+              University. She has more than ten years experience helping children, adolescents and adults through trauma and
+              grief in a crisis setting. Savannah has training in perinatal mental health, trauma informed parenting, trauma
+              focused cognitive behavioral therapy, play therapy, and motivational interviewing. She also likes working with
+              individuals experiencing anxiety, depression, struggles due to ADHD or life transitions.
+            </p>
+            <p class="mt-3 text-sm">
+              <a href="mailto:scrist@connectmh.com" class="text-brand-700 hover:text-brand-900">scrist@connectmh.com</a>
+            </p>
           </article>
 
           <!-- Megan -->
           <article class="reveal rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-200 card">
             <img class="h-48 w-full object-cover rounded-xl" src="therapists/megan.png" alt="Therapist portrait" />
             <h3 class="mt-4 font-semibold text-lg">Megan VanEver, LMSW</h3>
-            <p class="text-sm text-slate-600">Megan is a Licensed Masters Social Worker. She received her Master of Social Work degree from the University of Michigan. Megan has over 8 years of experience in community mental health working with children, adolescents, and families. Megan has training in perinatal mental health, trauma focused cognitive behavioral therapy, trauma informed parenting, motivational interviewing, and play therapy. She enjoys working with individuals experiencing difficulties due to ADHD, anxiety, life transitions, or depression</p>
-            <p class="mt-3 text-sm"><a href="mailto:mvanever@connectmh.com" class="text-brand-700 hover:text-brand-900">mvanever@connectmh.com</a></p>
+            <p class="text-sm text-slate-600">
+              Megan is a Licensed Masters Social Worker. She received her Master of Social Work degree from the University of
+              Michigan. Megan has over 8 years of experience in community mental health working with children, adolescents,
+              and families. Megan has training in perinatal mental health, trauma focused cognitive behavioral therapy, trauma
+              informed parenting, motivational interviewing, and play therapy. She enjoys working with individuals experiencing
+              difficulties due to ADHD, anxiety, life transitions, or depression
+            </p>
+            <p class="mt-3 text-sm">
+              <a href="mailto:mvanever@connectmh.com" class="text-brand-700 hover:text-brand-900">mvanever@connectmh.com</a>
+            </p>
           </article>
 
           <!-- Janis -->
           <article class="reveal rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-200 card">
             <img class="h-48 w-full object-cover rounded-xl" src="therapists/janis.png" alt="Therapist portrait" />
             <h3 class="mt-4 font-semibold text-lg">Janis Duke, LPC</h3>
-            <p class="text-sm text-slate-600">Janis is a licensed professional counselor who has been practicing in Midland for 35 years and has worked with individuals, families, couples, and adolescents. Janis has worked with survivors of domestic violence for the last eight years. She is trained in dialectic behavioral therapy, motivational interviewing, cognitive behavioral therapy, internal family systems and trauma recovery. She enjoys working with Veterans, PTSD, anxiety, depression, and relationship issues. Janis is joined by her certified therapy dog, Hamish, who helps provide comfort and support.</p>
-            <p class="mt-3 text-sm"><a href="mailto:jduke@connectmh.com" class="text-brand-700 hover:text-brand-900">jduke@connectmh.com</a></p>
+            <p class="text-sm text-slate-600">
+              Janis is a licensed professional counselor who has been practicing in Midland for 35 years and has worked with
+              individuals, families, couples, and adolescents. Janis has worked with survivors of domestic violence for the
+              last eight years. She is trained in dialectic behavioral therapy, motivational interviewing, cognitive behavioral
+              therapy, internal family systems and trauma recovery. She enjoys working with Veterans, PTSD, anxiety, depression,
+              and relationship issues. Janis is joined by her certified therapy dog, Hamish, who helps provide comfort and
+              support.
+            </p>
+            <p class="mt-3 text-sm">
+              <a href="mailto:jduke@connectmh.com" class="text-brand-700 hover:text-brand-900">jduke@connectmh.com</a>
+            </p>
           </article>
 
           <!-- Robin -->
           <article class="reveal rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-200 card">
             <img class="h-48 w-full object-cover rounded-xl" src="therapists/robin.png" alt="Therapist portrait" />
             <h3 class="mt-4 font-semibold text-lg">Robin L. Greiner, LMSW</h3>
-            <p class="text-sm text-slate-600">Robin is a Licensed Master Social Worker, having received her master’s degree from Saginaw Valley State University. She has over 25 years of experience working as a social worker, with the first 20 years working with those experiencing crisis. She enjoys working with teens and adults who are seeking treatment related to anxiety, depression, life transitions, relationship issues, and trauma. Robin is dedicated to providing a safe, collaborative, and supportive approach to help people reach their therapeutic goals. She is committed to helping those who would like to integrate their spiritual beliefs into therapy.
-
-Robin has specialized training in Eye Movement Desensitization and Reprocessing (EMDR), motivational interviewing, grief, pain, sleep, and Cognitive Behavior Therapy (CBT).</p>
-            <p class="mt-3 text-sm"><a href="mailto:rgreiner@connectmh.com" class="text-brand-700 hover:text-brand-900">rgreiner@connectmh.com</a></p>
+            <p class="text-sm text-slate-600">
+              Robin is a Licensed Master Social Worker, having received her master’s degree from Saginaw Valley State
+              University. She has over 25 years of experience working as a social worker, with the first 20 years working with
+              those experiencing crisis. She enjoys working with teens and adults who are seeking treatment related to anxiety,
+              depression, life transitions, relationship issues, and trauma. Robin is dedicated to providing a safe,
+              collaborative, and supportive approach to help people reach their therapeutic goals. She is committed to helping
+              those who would like to integrate their spiritual beliefs into therapy.
+              <br><br>
+              Robin has specialized training in Eye Movement Desensitization and Reprocessing (EMDR), motivational interviewing,
+              grief, pain, sleep, and Cognitive Behavior Therapy (CBT).
+            </p>
+            <p class="mt-3 text-sm">
+              <a href="mailto:rgreiner@connectmh.com" class="text-brand-700 hover:text-brand-900">rgreiner@connectmh.com</a>
+            </p>
           </article>
 
           <!-- Terri -->
           <article class="reveal rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-200 card">
             <img class="h-48 w-full object-cover rounded-xl" src="therapists/terri.png" alt="Therapist portrait" />
             <h3 class="mt-4 font-semibold text-lg">Terri Stevenson, MA, LPC</h3>
-            <p class="text-sm text-slate-600">Terri is a Licensed Professional Counselor with a Master’s in Counseling from Central Michigan University. While enjoying an Emeritus status, Terri can be available for returning clients, or for those wanting brief services. Terri has over 30 years of clinical experience and has been voted, "Best Couple & Family Counselor," on multiple occasions for the Great Lakes Bay Region. Her expertise is in relationships; helping people make decisions & improvements in their important relationships. Terri has prepared over, 150 Couples for Marriage and uses the PREPARE/ENRICH premarital inventory in this 4 session model with couples.
-
-Terri is a trained Spiritual Director and is open to incorporating faith beliefs & spirituality in her sessions if the client wishes. She is trained in Mindfulness Stress Reduction and Meditation which has applications for anxiety, trauma, depression and stress management.</p>
-            <p class="mt-3 text-sm"><a href="mailto:tstevenson@connectmh.com" class="text-brand-700 hover:text-brand-900">tstevenson@connectmh.com</a></p>
+            <p class="text-sm text-slate-600">
+              Terri is a Licensed Professional Counselor with a Master’s in Counseling from Central Michigan University. While
+              enjoying an Emeritus status, Terri can be available for returning clients, or for those wanting brief services.
+              Terri has over 30 years of clinical experience and has been voted, "Best Couple & Family Counselor," on multiple
+              occasions for the Great Lakes Bay Region. Her expertise is in relationships; helping people make decisions &
+              improvements in their important relationships. Terri has prepared over, 150 Couples for Marriage and uses the
+              PREPARE/ENRICH premarital inventory in this 4 session model with couples.
+              <br><br>
+              Terri is a trained Spiritual Director and is open to incorporating faith beliefs & spirituality in her sessions
+              if the client wishes. She is trained in Mindfulness Stress Reduction and Meditation which has applications for
+              anxiety, trauma, depression and stress management.
+            </p>
+            <p class="mt-3 text-sm">
+              <a href="mailto:tstevenson@connectmh.com" class="text-brand-700 hover:text-brand-900">tstevenson@connectmh.com</a>
+            </p>
           </article>
 
           <!-- Gary -->
           <article class="reveal rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-200 card">
             <img class="h-48 w-full object-cover rounded-xl" src="therapists/gary.png" alt="Therapist portrait" />
             <h3 class="mt-4 font-semibold text-lg">Gary Graham, ACSW, LMSW</h3>
-            <p class="text-sm text-slate-600">Gary Graham is a Licensed Masters level Social Worker with over 30 years clinical experience in the mental health field. This includes working in private practice the past 16 years with 14 years prior experience working in community mental health. Gary enjoys working with individuals, couples and families on a variety of topics. These include work stress, relationship issues, depression, anxiety, grief and loss. Additionally, Gary has ongoing education and experience using therapy approaches including cognitive behavioral therapy, trauma informed therapy, schema therapy, couples therapy, and stress reduction practices including mindfulness based practices. Gary's approach is to emphasize overall individual and relationship wellbeing that incorporates both mental, emotional, and physical health practices.</p>
-            <p class="mt-3 text-sm"><a href="mailto:ggraham@connectmh.com" class="text-brand-700 hover:text-brand-900">ggraham@connectmh.com</a></p>
+            <p class="text-sm text-slate-600">
+              Gary Graham is a Licensed Masters level Social Worker with over 30 years clinical experience in the mental health
+              field. This includes working in private practice the past 16 years with 14 years prior experience working in
+              community mental health. Gary enjoys working with individuals, couples and families on a variety of topics. These
+              include work stress, relationship issues, depression, anxiety, grief and loss. Additionally, Gary has ongoing
+              education and experience using therapy approaches including cognitive behavioral therapy, trauma informed therapy,
+              schema therapy, couples therapy, and stress reduction practices including mindfulness based practices. Gary's
+              approach is to emphasize overall individual and relationship wellbeing that incorporates both mental, emotional,
+              and physical health practices.
+            </p>
+            <p class="mt-3 text-sm">
+              <a href="mailto:ggraham@connectmh.com" class="text-brand-700 hover:text-brand-900">ggraham@connectmh.com</a>
+            </p>
           </article>
+
         </div>
       </div>
     </section>
 
-    <!-- Approach -->
+    <!-- =========================================================
+      APPROACH
+      NOTE: Your original had lg:grid-cols-2 but only one column of content;
+            I've kept your structure but added the missing container layout.
+    ========================================================== -->
     <section id="approach" class="py-16 sm:py-20 bg-slate-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
+      <div class="container-x grid lg:grid-cols-2 gap-10 items-center">
         <div class="reveal order-1 lg:order-2">
           <h2 class="font-display text-3xl sm:text-4xl text-slate-900">Our approach</h2>
           <p class="mt-4 text-slate-700">Add some kind of message here about what your style is?.</p>
+
           <ul class="mt-6 space-y-3 text-slate-700">
-            <li class="flex gap-3"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-brand-500"></span><strong>Evidence-based:</strong> Types of therapy, etc.. here.</li>
-            <li class="flex gap-3"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-brand-500"></span><strong>Whole-person:</strong> Some other type of information here...</li>
-            <li class="flex gap-3"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-brand-500"></span><strong>Flexible:</strong> Other things that make it special here...</li>
+            <li class="flex gap-3">
+              <span class="mt-1 h-2.5 w-2.5 rounded-full bg-brand-500"></span>
+              <span><strong>Evidence-based:</strong> Types of therapy, etc.. here.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="mt-1 h-2.5 w-2.5 rounded-full bg-brand-500"></span>
+              <span><strong>Whole-person:</strong> Some other type of information here...</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="mt-1 h-2.5 w-2.5 rounded-full bg-brand-500"></span>
+              <span><strong>Flexible:</strong> Other things that make it special here...</span>
+            </li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- Insurance & Pricing -->
+    <!-- =========================================================
+      INSURANCE & PRICING
+    ========================================================== -->
     <section class="py-16 sm:py-20 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="container-x">
         <div class="reveal text-center max-w-2xl mx-auto">
           <h2 class="font-display text-3xl sm:text-4xl text-slate-900">Insurance & Pricing</h2>
           <p class="mt-3 text-slate-600">We offer transparent, flexible options. Please verify coverage with your plan</p>
         </div>
+
         <div class="mt-10 grid gap-6 md:grid-cols-3">
           <div class="reveal rounded-2xl p-6 ring-1 ring-slate-200 bg-slate-50"><h3 class="font-semibold">Aetna</h3></div>
           <div class="reveal rounded-2xl p-6 ring-1 ring-slate-200 bg-slate-50"><h3 class="font-semibold">Blue Care Network PPO</h3></div>
@@ -376,6 +737,7 @@ Terri is a trained Spiritual Director and is open to incorporating faith beliefs
           <div class="reveal rounded-2xl p-6 ring-1 ring-slate-200 bg-slate-50"><h3 class="font-semibold">Medicare</h3></div>
           <div class="reveal rounded-2xl p-6 ring-1 ring-slate-200 bg-slate-50"><h3 class="font-semibold">Priority Health</h3></div>
           <div class="reveal rounded-2xl p-6 ring-1 ring-slate-200 bg-slate-50"><h3 class="font-semibold">Tri Care</h3></div>
+
           <div class="reveal rounded-2xl p-6 ring-1 ring-slate-200 bg-slate-50">
             <h3 class="font-semibold">Private Pay</h3>
             <p class="mt-2 text-slate-600 text-sm">Information about private pay options?</p>
@@ -383,29 +745,39 @@ Terri is a trained Spiritual Director and is open to incorporating faith beliefs
         </div>
       </div>
     </section>
-    
-    <!-- FAQ -->
+
+    <!-- =========================================================
+      FAQ
+    ========================================================== -->
     <section id="faq" class="py-16 sm:py-20 bg-white">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="reveal text-center">
           <h2 class="font-display text-3xl sm:text-4xl text-slate-900">FAQ</h2>
           <p class="mt-3 text-slate-600">Quick answers to common questions. We can add more here if you'd like.</p>
         </div>
+
         <div class="mt-8 space-y-4">
           <details class="reveal group rounded-xl ring-1 ring-slate-200 p-5 bg-slate-50">
-            <summary class="cursor-pointer font-semibold text-slate-900 flex items-center justify-between">Do you offer telehealth?
+            <summary class="cursor-pointer font-semibold text-slate-900 flex items-center justify-between">
+              Do you offer telehealth?
               <span class="ml-4 transition-transform group-open:rotate-90">▶</span>
             </summary>
             <p class="mt-3 text-slate-700">Information here about telehealth?.</p>
           </details>
+
           <details class="reveal group rounded-xl ring-1 ring-slate-200 p-5 bg-slate-50">
-            <summary class="cursor-pointer font-semibold text-slate-900 flex items-center justify-between">How do I get matched with a therapist?
+            <summary class="cursor-pointer font-semibold text-slate-900 flex items-center justify-between">
+              How do I get matched with a therapist?
               <span class="ml-4 transition-transform group-open:rotate-90">▶</span>
             </summary>
-            <p class="mt-3 text-slate-700">Complete the short intake form below and we’ll recommend a match based on your goals and schedule.</p>
+            <p class="mt-3 text-slate-700">
+              Complete the short intake form below and we’ll recommend a match based on your goals and schedule.
+            </p>
           </details>
+
           <details class="reveal group rounded-xl ring-1 ring-slate-200 p-5 bg-slate-50">
-            <summary class="cursor-pointer font-semibold text-slate-900 flex items-center justify-between">What is your cancellation policy?
+            <summary class="cursor-pointer font-semibold text-slate-900 flex items-center justify-between">
+              What is your cancellation policy?
               <span class="ml-4 transition-transform group-open:rotate-90">▶</span>
             </summary>
             <p class="mt-3 text-slate-700">Information about cancellation polcies here.</p>
@@ -414,82 +786,175 @@ Terri is a trained Spiritual Director and is open to incorporating faith beliefs
       </div>
     </section>
 
-    <!-- Contact / Intake form -->
+    <!-- =========================================================
+      CONTACT / INTAKE FORM
+    ========================================================== -->
     <section id="contact" class="py-16 sm:py-20 bg-slate-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10">
+      <div class="container-x grid lg:grid-cols-2 gap-10">
+
+        <!-- Left: form -->
         <div class="reveal">
           <h2 class="font-display text-3xl sm:text-4xl text-slate-900">Contact us to get started</h2>
           <p class="mt-4 text-slate-700">Send a quick message and our staff will get back to you within 1–2 business days.</p>
+
           <div class="mt-6 rounded-2xl p-6 bg-white ring-1 ring-slate-200">
             <!-- Replace with your backend / Formspree / Netlify Forms for production -->
-            <form id="intakeForm" class="grid grid-cols-1 gap-4" action="mailto:connect@connectmh.com" method="post" enctype="text/plain">
+            <form
+              id="intakeForm"
+              class="grid grid-cols-1 gap-4"
+              action="mailto:connect@connectmh.com"
+              method="post"
+              enctype="text/plain"
+            >
               <div>
                 <label for="name" class="block text-sm font-medium text-slate-700">Full name</label>
-                <input id="name" name="name" required class="mt-1 w-full rounded-xl border-slate-300 focus:border-brand-500 focus:ring-brand-500" placeholder="Jane Doe" />
+                <input
+                  id="name"
+                  name="name"
+                  required
+                  class="mt-1 w-full rounded-xl border-slate-300 focus:border-brand-500 focus:ring-brand-500"
+                  placeholder="Jane Doe"
+                />
               </div>
+
               <div>
                 <label for="email" class="block text-sm font-medium text-slate-700">Email</label>
-                <input id="email" name="email" type="email" required class="mt-1 w-full rounded-xl border-slate-300 focus:border-brand-500 focus:ring-brand-500" placeholder="jane@example.com" />
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  class="mt-1 w-full rounded-xl border-slate-300 focus:border-brand-500 focus:ring-brand-500"
+                  placeholder="jane@example.com"
+                />
               </div>
+
               <div>
                 <label for="phone" class="block text-sm font-medium text-slate-700">Phone (optional)</label>
-                <input id="phone" name="phone" type="tel" class="mt-1 w-full rounded-xl border-slate-300 focus:border-brand-500 focus:ring-brand-500" placeholder="(555) 555-0199" />
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  class="mt-1 w-full rounded-xl border-slate-300 focus:border-brand-500 focus:ring-brand-500"
+                  placeholder="(555) 555-0199"
+                />
               </div>
+
               <div>
                 <label for="service" class="block text-sm font-medium text-slate-700">Interested in</label>
-                <select id="service" name="service" class="mt-1 w-full rounded-xl border-slate-300 focus:border-brand-500 focus:ring-brand-500">
+                <select
+                  id="service"
+                  name="service"
+                  class="mt-1 w-full rounded-xl border-slate-300 focus:border-brand-500 focus:ring-brand-500"
+                >
                   <option>Individual therapy</option>
                   <option>Couples therapy</option>
                   <option>Teen therapy</option>
                   <option>Consultation</option>
                 </select>
               </div>
+
               <div>
-                <label for="message" class="block text-sm font-medium text-slate-700">Briefly share what brings you in</label>
-                <textarea id="message" name="message" rows="4" class="mt-1 w-full rounded-xl border-slate-300 focus:border-brand-500 focus:ring-brand-500" placeholder="What you’re hoping to work on…"></textarea>
+                <label for="message" class="block text-sm font-medium text-slate-700">
+                  Briefly share what brings you in
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  class="mt-1 w-full rounded-xl border-slate-300 focus:border-brand-500 focus:ring-brand-500"
+                  placeholder="What you’re hoping to work on…"
+                ></textarea>
               </div>
+
               <div class="flex items-center gap-3">
-                <input id="consent" name="consent" type="checkbox" required class="h-4 w-4 rounded border-slate-300 text-brand-600 focus:ring-brand-500">
-                <label for="consent" class="text-sm text-slate-600">I consent to being contacted about services. Do not share crisis information—call 988 for emergencies.</label>
+                <input
+                  id="consent"
+                  name="consent"
+                  type="checkbox"
+                  required
+                  class="h-4 w-4 rounded border-slate-300 text-brand-600 focus:ring-brand-500"
+                >
+                <label for="consent" class="text-sm text-slate-600">
+                  I consent to being contacted about services. Do not share crisis information—call 988 for emergencies.
+                </label>
               </div>
-              <button class="inline-flex items-center justify-center rounded-xl bg-brand-600 px-5 py-3 text-white font-semibold shadow-soft hover:bg-brand-700">Submit</button>
+
+              <button
+                class="inline-flex items-center justify-center rounded-xl bg-brand-600 px-5 py-3 text-white font-semibold shadow-soft hover:bg-brand-700 btn"
+              >
+                Submit
+              </button>
+
               <p id="formMsg" class="sr-only mt-2 text-sm"></p>
             </form>
           </div>
         </div>
 
+        <!-- Right: location -->
         <div class="reveal">
           <div class="rounded-3xl bg-white p-6 ring-1 ring-slate-200">
             <h3 class="font-semibold text-lg">Visit us</h3>
-            <p class="mt-2 text-slate-600">Tri-Star Building<br>200 E Main St, #200, 2nd Floor<br>Midland, MI 48640</p>
+            <p class="mt-2 text-slate-600">
+              Tri-Star Building<br>
+              200 E Main St, #200, 2nd Floor<br>
+              Midland, MI 48640
+            </p>
+
             <div class="mt-4">
-              <a class="inline-flex items-center gap-2 rounded-xl border border-slate-300 px-4 py-2 hover:bg-slate-50" href="https://maps.google.com/?q=200+E+Main+St+%23200%2C+Midland%2C+MI+48640" target="_blank" rel="noopener">Open in Maps
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M14 3h7v7h-2V6.41l-6.29 6.3-1.42-1.42 6.3-6.29H14V3z"/></svg>
+              <a
+                class="inline-flex items-center gap-2 rounded-xl border border-slate-300 px-4 py-2 hover:bg-slate-50"
+                href="https://maps.google.com/?q=200+E+Main+St+%23200%2C+Midland%2C+MI+48640"
+                target="_blank"
+                rel="noopener"
+              >
+                Open in Maps
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M14 3h7v7h-2V6.41l-6.29 6.3-1.42-1.42 6.3-6.29H14V3z"/>
+                </svg>
               </a>
             </div>
+
             <div class="mt-6 grid grid-cols-2 gap-6">
               <div>
                 <h4 class="font-semibold">Hours</h4>
-                <p class="mt-1 text-sm text-slate-600">8:00 a.m. – 5:00 p.m. Monday through Friday; evening hours by appointment.</p>
+                <p class="mt-1 text-sm text-slate-600">
+                  8:00 a.m. – 5:00 p.m. Monday through Friday; evening hours by appointment.
+                </p>
               </div>
+
               <div>
                 <h4 class="font-semibold">Contact</h4>
-                <p class="mt-1 text-sm text-slate-600">989-633-9021<br>connect@connectmh.com</p>
+                <p class="mt-1 text-sm text-slate-600">
+                  989-633-9021<br>
+                  connect@connectmh.com
+                </p>
               </div>
             </div>
+
             <div class="mt-6">
               <h4 class="font-semibold">If you’re in crisis</h4>
-              <p class="mt-1 text-sm text-slate-600">Call or text <strong>988</strong> (US) or visit your nearest emergency room.</p>
+              <p class="mt-1 text-sm text-slate-600">
+                Call or text <strong>988</strong> (US) or visit your nearest emergency room.
+              </p>
             </div>
           </div>
         </div>
+
       </div>
     </section>
+
   </main>
 
+  <!-- =========================================================
+    FOOTER
+  ========================================================== -->
   <footer class="border-t border-slate-200 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-6">
-      <p class="text-sm text-slate-600">© <span id="year"></span> Connection for Mental Health, PLC.. All rights reserved.</p>
+    <div class="container-x py-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <p class="text-sm text-slate-600">
+        © <span id="year"></span> Connection for Mental Health, PLC.. All rights reserved.
+      </p>
+
       <nav class="flex flex-wrap items-center gap-4 text-sm text-slate-600">
         <a href="#" class="hover:text-slate-900">Privacy</a>
         <a href="#" class="hover:text-slate-900">Terms</a>
@@ -498,94 +963,113 @@ Terri is a trained Spiritual Director and is open to incorporating faith beliefs
     </div>
   </footer>
 
-<script>
-  // DOM-ready wrapper (works across mobile browsers)
-  (function () {
-    // Year
-    var yearEl = document.getElementById('year');
-    if (yearEl) yearEl.textContent = new Date().getFullYear();
+  <!-- =========================================================
+    SCRIPTS
+  ========================================================== -->
+  <script>
+    (function () {
+      // =========================================================
+      // Footer Year
+      // =========================================================
+      var yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    // Mobile menu toggle (compat: no optional chaining)
-    var btn = document.getElementById('menuBtn');
-    var menu = document.getElementById('mobileMenu');
-    var headerEl = document.querySelector('header');
-    var bodyEl = document.body;
+      // =========================================================
+      // Mobile Menu Toggle
+      // =========================================================
+      var btn = document.getElementById('menuBtn');
+      var menu = document.getElementById('mobileMenu');
+      var headerEl = document.querySelector('header');
+      var bodyEl = document.body;
 
-    function keepMaroon() {
-      if (!headerEl) return;
-      headerEl.classList.add('bg-brand-600', 'text-white');
-      headerEl.classList.remove('bg-white', 'bg-white/90', 'supports-[backdrop-filter]:bg-white/70');
-    }
-
-    function setExpanded(isOpen) {
-      if (!btn || !menu) return;
-      btn.setAttribute('aria-expanded', String(isOpen));
-      if (isOpen) {
-        menu.classList.remove('hidden');
-        if (headerEl) headerEl.setAttribute('data-menu-open', 'true');
-        if (bodyEl) bodyEl.classList.add('overflow-hidden'); // lock scroll behind menu
-      } else {
-        menu.classList.add('hidden');
-        if (headerEl) headerEl.removeAttribute('data-menu-open');
-        if (bodyEl) bodyEl.classList.remove('overflow-hidden');
+      function keepMaroon() {
+        if (!headerEl) return;
+        headerEl.classList.add('bg-brand-600', 'text-white');
+        headerEl.classList.remove('bg-white', 'bg-white/90', 'supports-[backdrop-filter]:bg-white/70');
       }
+
+      function setExpanded(isOpen) {
+        if (!btn || !menu) return;
+
+        btn.setAttribute('aria-expanded', String(isOpen));
+
+        if (isOpen) {
+          menu.classList.remove('hidden');
+          if (headerEl) headerEl.setAttribute('data-menu-open', 'true');
+          if (bodyEl) bodyEl.classList.add('overflow-hidden');
+        } else {
+          menu.classList.add('hidden');
+          if (headerEl) headerEl.removeAttribute('data-menu-open');
+          if (bodyEl) bodyEl.classList.remove('overflow-hidden');
+        }
+
+        keepMaroon();
+      }
+
+      // Toggle via hamburger
+      if (btn && menu) {
+        btn.addEventListener('click', function () {
+          var expanded = btn.getAttribute('aria-expanded') === 'true';
+          setExpanded(!expanded);
+        });
+      }
+
+      // Close when any mobile link clicked
+      var menuLinks = document.querySelectorAll('#mobileMenu a');
+      for (var i = 0; i < menuLinks.length; i++) {
+        menuLinks[i].addEventListener('click', function () { setExpanded(false); });
+      }
+
+      // Close on Esc
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') setExpanded(false);
+      });
+
+      // Close on hash change
+      window.addEventListener('hashchange', function () { setExpanded(false); });
+
+      // Close on resize to md+
+      window.addEventListener('resize', function () {
+        if (window.innerWidth >= 768) setExpanded(false);
+      });
+
+      document.addEventListener('visibilitychange', keepMaroon);
       keepMaroon();
-    }
 
-    // Toggle via hamburger button
-    if (btn && menu) {
-      btn.addEventListener('click', function () {
-        var expanded = btn.getAttribute('aria-expanded') === 'true';
-        setExpanded(!expanded);
-      });
-    }
+      // =========================================================
+      // Reveal-on-scroll
+      // =========================================================
+      var reveals = document.querySelectorAll('.reveal');
 
-    // ✅ Auto-close when any mobile menu link is clicked
-    var menuLinks = document.querySelectorAll('#mobileMenu a');
-    for (var i = 0; i < menuLinks.length; i++) {
-      menuLinks[i].addEventListener('click', function () {
-        setExpanded(false);
-      });
-    }
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
+          });
+        }, { threshold: 0.1 });
 
-    // ✅ Close on Esc key
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') setExpanded(false);
-    });
+        for (var j = 0; j < reveals.length; j++) observer.observe(reveals[j]);
+      } else {
+        // Fallback
+        for (var k = 0; k < reveals.length; k++) reveals[k].classList.add('visible');
+      }
 
-    // ✅ Close on hash change (anchor jumps)
-    window.addEventListener('hashchange', function () {
-      setExpanded(false);
-    });
+      // =========================================================
+      // Demo Form Handler (remove when wired to backend)
+      // =========================================================
+      var form = document.getElementById('intakeForm');
+      var msg = document.getElementById('formMsg');
 
-    // Close menu on resize to md+
-    window.addEventListener('resize', function () {
-      if (window.innerWidth >= 768) setExpanded(false);
-    });
-
-    document.addEventListener('visibilitychange', keepMaroon);
-    keepMaroon();
-
-    // Section reveal on scroll
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
-    var reveals = document.querySelectorAll('.reveal');
-    for (var j = 0; j < reveals.length; j++) observer.observe(reveals[j]);
-
-    // Demo form message (remove when wired to backend)
-    var form = document.getElementById('intakeForm');
-    var msg = document.getElementById('formMsg');
-    if (form && msg) {
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        msg.classList.remove('sr-only');
-        msg.classList.add('text-brand-700');
-        msg.textContent = "Thanks! We'll reach out within 1–2 business days.";
-        form.reset();
-      });
-    }
-  })();
-</script>
+      if (form && msg) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          msg.classList.remove('sr-only');
+          msg.classList.add('text-brand-700');
+          msg.textContent = "Thanks! We'll reach out within 1–2 business days.";
+          form.reset();
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
