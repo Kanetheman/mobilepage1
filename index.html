@@ -504,128 +504,325 @@
     <!-- =========================================================
       THERAPISTS
     ========================================================== -->
-    <section id="therapists" class="py-16 sm:py-20 bg-white">
-      <div class="container-x">
+      <section id="therapists" class="py-16 sm:py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Header -->
         <div class="reveal text-center max-w-2xl mx-auto">
           <h2 class="font-display text-3xl sm:text-4xl text-slate-900">Meet our therapists</h2>
-          <p class="mt-3 text-slate-600">Some small detail here about everyone..</p>
+          <p class="mt-3 text-slate-600">
+            A supportive team with a range of specialties. Tap a card to read more.
+          </p>
         </div>
 
+        <!-- Grid -->
         <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 
-          <!-- Savannah -->
-          <article class="reveal rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-200 card">
-            <img class="h-48 w-full object-cover rounded-xl" src="therapists/savannah.png" alt="Therapist portrait" />
-            <h3 class="mt-4 font-semibold text-lg">Savannah Crist, LMSW</h3>
-            <p class="text-sm text-slate-600">Trauma • Grief • Perinatal Mental Health • Anxiety • Depression • ADHD • Life Transitions</p>
-            <p class="mt-3 text-slate-700 text-sm">
-              Savannah is a Licensed Masters Social Worker. She received her Master of Social Work degree from Michigan State
-              University. She has more than ten years experience helping children, adolescents and adults through trauma and
-              grief in a crisis setting. Savannah has training in perinatal mental health, trauma informed parenting, trauma
-              focused cognitive behavioral therapy, play therapy, and motivational interviewing. She also likes working with
-              individuals experiencing anxiety, depression, struggles due to ADHD or life transitions.
-            </p>
-            <p class="mt-3 text-sm">
-              <a href="mailto:scrist@connectmh.com" class="text-brand-700 hover:text-brand-900">scrist@connectmh.com</a>
-            </p>
-          </article>
+          <!-- Card -->
+          <details class="reveal group rounded-3xl bg-white ring-1 ring-slate-200/70 shadow-sm hover:shadow-md transition">
+            <summary class="list-none cursor-pointer p-6">
+              <div class="flex items-start gap-4">
+
+                <!-- Rounded portrait -->
+                <div class="shrink-0">
+                  <img
+                    class="h-16 w-16 rounded-full object-cover ring-2 ring-white shadow-sm"
+                    src="therapists/savannah.png"
+                    alt="Savannah Crist portrait"
+                  />
+                </div>
+
+                <!-- Name + quick info -->
+                <div class="min-w-0 flex-1">
+                  <div class="flex items-start justify-between gap-3">
+                    <div class="min-w-0">
+                      <h3 class="text-lg font-semibold text-slate-900 leading-snug">
+                        Savannah Crist, LMSW
+                      </h3>
+                      <p class="mt-1 text-sm text-slate-600">
+                        Trauma • Grief • Perinatal MH • Anxiety • Depression • ADHD
+                      </p>
+                    </div>
+
+                    <!-- Expand icon -->
+                    <span class="mt-1 inline-flex h-9 w-9 items-center justify-center rounded-full bg-slate-50 ring-1 ring-slate-200 text-slate-500 transition group-open:rotate-45">
+                      +
+                    </span>
+                  </div>
+
+                  <!-- “Read more” hint -->
+                  <p class="mt-3 text-sm font-semibold text-brand-700">
+                    Read bio
+                  </p>
+                </div>
+              </div>
+            </summary>
+
+            <!-- Expanded content -->
+            <div class="px-6 pb-6 pt-0">
+              <div class="border-t border-slate-100 pt-4">
+                <p class="text-sm leading-relaxed text-slate-700">
+                  Savannah is a Licensed Masters Social Worker. She received her Master of Social Work degree from Michigan State
+                  University. She has more than ten years experience helping children, adolescents and adults through trauma and
+                  grief in a crisis setting. Savannah has training in perinatal mental health, trauma informed parenting, trauma
+                  focused cognitive behavioral therapy, play therapy, and motivational interviewing. She also likes working with
+                  individuals experiencing anxiety, depression, struggles due to ADHD or life transitions.
+                </p>
+
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <span class="px-3 py-1.5 rounded-full bg-slate-50 ring-1 ring-slate-200 text-xs font-medium text-slate-700">Trauma</span>
+                  <span class="px-3 py-1.5 rounded-full bg-slate-50 ring-1 ring-slate-200 text-xs font-medium text-slate-700">Grief</span>
+                  <span class="px-3 py-1.5 rounded-full bg-slate-50 ring-1 ring-slate-200 text-xs font-medium text-slate-700">Perinatal MH</span>
+                  <span class="px-3 py-1.5 rounded-full bg-slate-50 ring-1 ring-slate-200 text-xs font-medium text-slate-700">CBT</span>
+                </div>
+
+                <div class="mt-5 flex items-center justify-between gap-3">
+                  <a href="mailto:scrist@connectmh.com" class="text-sm font-semibold text-brand-700 hover:text-brand-900">
+                    scrist@connectmh.com
+                  </a>
+                  <a href="#contact" class="text-sm font-semibold text-slate-700 hover:text-slate-900">
+                    Get started →
+                  </a>
+                </div>
+              </div>
+            </div>
+          </details>
 
           <!-- Megan -->
-          <article class="reveal rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-200 card">
-            <img class="h-48 w-full object-cover rounded-xl" src="therapists/megan.png" alt="Therapist portrait" />
-            <h3 class="mt-4 font-semibold text-lg">Megan VanEver, LMSW</h3>
-            <p class="text-sm text-slate-600">
-              Megan is a Licensed Masters Social Worker. She received her Master of Social Work degree from the University of
-              Michigan. Megan has over 8 years of experience in community mental health working with children, adolescents,
-              and families. Megan has training in perinatal mental health, trauma focused cognitive behavioral therapy, trauma
-              informed parenting, motivational interviewing, and play therapy. She enjoys working with individuals experiencing
-              difficulties due to ADHD, anxiety, life transitions, or depression
-            </p>
-            <p class="mt-3 text-sm">
-              <a href="mailto:mvanever@connectmh.com" class="text-brand-700 hover:text-brand-900">mvanever@connectmh.com</a>
-            </p>
-          </article>
+          <details class="reveal group rounded-3xl bg-white ring-1 ring-slate-200/70 shadow-sm hover:shadow-md transition">
+            <summary class="list-none cursor-pointer p-6">
+              <div class="flex items-start gap-4">
+                <div class="shrink-0">
+                  <img class="h-16 w-16 rounded-full object-cover ring-2 ring-white shadow-sm"
+                       src="therapists/megan.png" alt="Megan VanEver portrait" />
+                </div>
+                <div class="min-w-0 flex-1">
+                  <div class="flex items-start justify-between gap-3">
+                    <div class="min-w-0">
+                      <h3 class="text-lg font-semibold text-slate-900 leading-snug">Megan VanEver, LMSW</h3>
+                      <p class="mt-1 text-sm text-slate-600">
+                        Perinatal MH • TF-CBT • Parenting • MI • Play Therapy • ADHD • Anxiety
+                      </p>
+                    </div>
+                    <span class="mt-1 inline-flex h-9 w-9 items-center justify-center rounded-full bg-slate-50 ring-1 ring-slate-200 text-slate-500 transition group-open:rotate-45">+</span>
+                  </div>
+                  <p class="mt-3 text-sm font-semibold text-brand-700">Read bio</p>
+                </div>
+              </div>
+            </summary>
+
+            <div class="px-6 pb-6 pt-0">
+              <div class="border-t border-slate-100 pt-4">
+                <p class="text-sm leading-relaxed text-slate-700">
+                  Megan is a Licensed Masters Social Worker. She received her Master of Social Work degree from the University of
+                  Michigan. Megan has over 8 years of experience in community mental health working with children, adolescents, and
+                  families. Megan has training in perinatal mental health, trauma focused cognitive behavioral therapy, trauma
+                  informed parenting, motivational interviewing, and play therapy. She enjoys working with individuals experiencing
+                  difficulties due to ADHD, anxiety, life transitions, or depression.
+                </p>
+
+                <div class="mt-5 flex items-center justify-between gap-3">
+                  <a href="mailto:mvanever@connectmh.com" class="text-sm font-semibold text-brand-700 hover:text-brand-900">
+                    mvanever@connectmh.com
+                  </a>
+                  <a href="#contact" class="text-sm font-semibold text-slate-700 hover:text-slate-900">
+                    Get started →
+                  </a>
+                </div>
+              </div>
+            </div>
+          </details>
 
           <!-- Janis -->
-          <article class="reveal rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-200 card">
-            <img class="h-48 w-full object-cover rounded-xl" src="therapists/janis.png" alt="Therapist portrait" />
-            <h3 class="mt-4 font-semibold text-lg">Janis Duke, LPC</h3>
-            <p class="text-sm text-slate-600">
-              Janis is a licensed professional counselor who has been practicing in Midland for 35 years and has worked with
-              individuals, families, couples, and adolescents. Janis has worked with survivors of domestic violence for the
-              last eight years. She is trained in dialectic behavioral therapy, motivational interviewing, cognitive behavioral
-              therapy, internal family systems and trauma recovery. She enjoys working with Veterans, PTSD, anxiety, depression,
-              and relationship issues. Janis is joined by her certified therapy dog, Hamish, who helps provide comfort and
-              support.
-            </p>
-            <p class="mt-3 text-sm">
-              <a href="mailto:jduke@connectmh.com" class="text-brand-700 hover:text-brand-900">jduke@connectmh.com</a>
-            </p>
-          </article>
+          <details class="reveal group rounded-3xl bg-white ring-1 ring-slate-200/70 shadow-sm hover:shadow-md transition">
+            <summary class="list-none cursor-pointer p-6">
+              <div class="flex items-start gap-4">
+                <div class="shrink-0">
+                  <img class="h-16 w-16 rounded-full object-cover ring-2 ring-white shadow-sm"
+                       src="therapists/janis.png" alt="Janis Duke portrait" />
+                </div>
+                <div class="min-w-0 flex-1">
+                  <div class="flex items-start justify-between gap-3">
+                    <div class="min-w-0">
+                      <h3 class="text-lg font-semibold text-slate-900 leading-snug">Janis Duke, LPC</h3>
+                      <p class="mt-1 text-sm text-slate-600">
+                        DBT • CBT • IFS • Trauma Recovery • Veterans • PTSD • Relationships
+                      </p>
+                    </div>
+                    <span class="mt-1 inline-flex h-9 w-9 items-center justify-center rounded-full bg-slate-50 ring-1 ring-slate-200 text-slate-500 transition group-open:rotate-45">+</span>
+                  </div>
+                  <p class="mt-3 text-sm font-semibold text-brand-700">Read bio</p>
+                </div>
+              </div>
+            </summary>
+
+            <div class="px-6 pb-6 pt-0">
+              <div class="border-t border-slate-100 pt-4">
+                <p class="text-sm leading-relaxed text-slate-700">
+                  Janis is a licensed professional counselor who has been practicing in Midland for 35 years and has worked with
+                  individuals, families, couples, and adolescents. Janis has worked with survivors of domestic violence for the last
+                  eight years. She is trained in dialectic behavioral therapy, motivational interviewing, cognitive behavioral
+                  therapy, internal family systems and trauma recovery. She enjoys working with Veterans, PTSD, anxiety, depression,
+                  and relationship issues. Janis is joined by her certified therapy dog, Hamish, who helps provide comfort and support.
+                </p>
+
+                <div class="mt-5 flex items-center justify-between gap-3">
+                  <a href="mailto:jduke@connectmh.com" class="text-sm font-semibold text-brand-700 hover:text-brand-900">
+                    jduke@connectmh.com
+                  </a>
+                  <a href="#contact" class="text-sm font-semibold text-slate-700 hover:text-slate-900">
+                    Get started →
+                  </a>
+                </div>
+              </div>
+            </div>
+          </details>
 
           <!-- Robin -->
-          <article class="reveal rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-200 card">
-            <img class="h-48 w-full object-cover rounded-xl" src="therapists/robin.png" alt="Therapist portrait" />
-            <h3 class="mt-4 font-semibold text-lg">Robin L. Greiner, LMSW</h3>
-            <p class="text-sm text-slate-600">
-              Robin is a Licensed Master Social Worker, having received her master’s degree from Saginaw Valley State
-              University. She has over 25 years of experience working as a social worker, with the first 20 years working with
-              those experiencing crisis. She enjoys working with teens and adults who are seeking treatment related to anxiety,
-              depression, life transitions, relationship issues, and trauma. Robin is dedicated to providing a safe,
-              collaborative, and supportive approach to help people reach their therapeutic goals. She is committed to helping
-              those who would like to integrate their spiritual beliefs into therapy.
-              <br><br>
-              Robin has specialized training in Eye Movement Desensitization and Reprocessing (EMDR), motivational interviewing,
-              grief, pain, sleep, and Cognitive Behavior Therapy (CBT).
-            </p>
-            <p class="mt-3 text-sm">
-              <a href="mailto:rgreiner@connectmh.com" class="text-brand-700 hover:text-brand-900">rgreiner@connectmh.com</a>
-            </p>
-          </article>
+          <details class="reveal group rounded-3xl bg-white ring-1 ring-slate-200/70 shadow-sm hover:shadow-md transition">
+            <summary class="list-none cursor-pointer p-6">
+              <div class="flex items-start gap-4">
+                <div class="shrink-0">
+                  <img class="h-16 w-16 rounded-full object-cover ring-2 ring-white shadow-sm"
+                       src="therapists/robin.png" alt="Robin Greiner portrait" />
+                </div>
+                <div class="min-w-0 flex-1">
+                  <div class="flex items-start justify-between gap-3">
+                    <div class="min-w-0">
+                      <h3 class="text-lg font-semibold text-slate-900 leading-snug">Robin L. Greiner, LMSW</h3>
+                      <p class="mt-1 text-sm text-slate-600">
+                        Teens & Adults • Anxiety • Depression • Trauma • EMDR • CBT • Grief
+                      </p>
+                    </div>
+                    <span class="mt-1 inline-flex h-9 w-9 items-center justify-center rounded-full bg-slate-50 ring-1 ring-slate-200 text-slate-500 transition group-open:rotate-45">+</span>
+                  </div>
+                  <p class="mt-3 text-sm font-semibold text-brand-700">Read bio</p>
+                </div>
+              </div>
+            </summary>
+
+            <div class="px-6 pb-6 pt-0">
+              <div class="border-t border-slate-100 pt-4">
+                <p class="text-sm leading-relaxed text-slate-700">
+                  Robin is a Licensed Master Social Worker. She has over 25 years of experience working as a social worker, with the
+                  first 20 years working with those experiencing crisis. She enjoys working with teens and adults seeking treatment
+                  related to anxiety, depression, life transitions, relationship issues, and trauma. Robin has specialized training in
+                  EMDR, motivational interviewing, grief, pain, sleep, and CBT.
+                </p>
+
+                <div class="mt-5 flex items-center justify-between gap-3">
+                  <a href="mailto:rgreiner@connectmh.com" class="text-sm font-semibold text-brand-700 hover:text-brand-900">
+                    rgreiner@connectmh.com
+                  </a>
+                  <a href="#contact" class="text-sm font-semibold text-slate-700 hover:text-slate-900">
+                    Get started →
+                  </a>
+                </div>
+              </div>
+            </div>
+          </details>
 
           <!-- Terri -->
-          <article class="reveal rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-200 card">
-            <img class="h-48 w-full object-cover rounded-xl" src="therapists/terri.png" alt="Therapist portrait" />
-            <h3 class="mt-4 font-semibold text-lg">Terri Stevenson, MA, LPC</h3>
-            <p class="text-sm text-slate-600">
-              Terri is a Licensed Professional Counselor with a Master’s in Counseling from Central Michigan University. While
-              enjoying an Emeritus status, Terri can be available for returning clients, or for those wanting brief services.
-              Terri has over 30 years of clinical experience and has been voted, "Best Couple & Family Counselor," on multiple
-              occasions for the Great Lakes Bay Region. Her expertise is in relationships; helping people make decisions &
-              improvements in their important relationships. Terri has prepared over, 150 Couples for Marriage and uses the
-              PREPARE/ENRICH premarital inventory in this 4 session model with couples.
-              <br><br>
-              Terri is a trained Spiritual Director and is open to incorporating faith beliefs & spirituality in her sessions
-              if the client wishes. She is trained in Mindfulness Stress Reduction and Meditation which has applications for
-              anxiety, trauma, depression and stress management.
-            </p>
-            <p class="mt-3 text-sm">
-              <a href="mailto:tstevenson@connectmh.com" class="text-brand-700 hover:text-brand-900">tstevenson@connectmh.com</a>
-            </p>
-          </article>
+          <details class="reveal group rounded-3xl bg-white ring-1 ring-slate-200/70 shadow-sm hover:shadow-md transition">
+            <summary class="list-none cursor-pointer p-6">
+              <div class="flex items-start gap-4">
+                <div class="shrink-0">
+                  <img class="h-16 w-16 rounded-full object-cover ring-2 ring-white shadow-sm"
+                       src="therapists/terri.png" alt="Terri Stevenson portrait" />
+                </div>
+                <div class="min-w-0 flex-1">
+                  <div class="flex items-start justify-between gap-3">
+                    <div class="min-w-0">
+                      <h3 class="text-lg font-semibold text-slate-900 leading-snug">Terri Stevenson, MA, LPC</h3>
+                      <p class="mt-1 text-sm text-slate-600">
+                        Couples & Family • Spiritual Direction • Mindfulness • Stress • Trauma
+                      </p>
+                    </div>
+                    <span class="mt-1 inline-flex h-9 w-9 items-center justify-center rounded-full bg-slate-50 ring-1 ring-slate-200 text-slate-500 transition group-open:rotate-45">+</span>
+                  </div>
+                  <p class="mt-3 text-sm font-semibold text-brand-700">Read bio</p>
+                </div>
+              </div>
+            </summary>
+
+            <div class="px-6 pb-6 pt-0">
+              <div class="border-t border-slate-100 pt-4">
+                <p class="text-sm leading-relaxed text-slate-700">
+                  Terri is a Licensed Professional Counselor with a Master’s in Counseling from Central Michigan University. Terri
+                  has over 30 years of clinical experience and has been voted "Best Couple & Family Counselor" multiple times. Her
+                  expertise is in relationships and premarital preparation using PREPARE/ENRICH. She is also trained in spiritual
+                  direction, mindfulness stress reduction, and meditation.
+                </p>
+
+                <div class="mt-5 flex items-center justify-between gap-3">
+                  <a href="mailto:tstevenson@connectmh.com" class="text-sm font-semibold text-brand-700 hover:text-brand-900">
+                    tstevenson@connectmh.com
+                  </a>
+                  <a href="#contact" class="text-sm font-semibold text-slate-700 hover:text-slate-900">
+                    Get started →
+                  </a>
+                </div>
+              </div>
+            </div>
+          </details>
 
           <!-- Gary -->
-          <article class="reveal rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-200 card">
-            <img class="h-48 w-full object-cover rounded-xl" src="therapists/gary.png" alt="Therapist portrait" />
-            <h3 class="mt-4 font-semibold text-lg">Gary Graham, ACSW, LMSW</h3>
-            <p class="text-sm text-slate-600">
-              Gary Graham is a Licensed Masters level Social Worker with over 30 years clinical experience in the mental health
-              field. This includes working in private practice the past 16 years with 14 years prior experience working in
-              community mental health. Gary enjoys working with individuals, couples and families on a variety of topics. These
-              include work stress, relationship issues, depression, anxiety, grief and loss. Additionally, Gary has ongoing
-              education and experience using therapy approaches including cognitive behavioral therapy, trauma informed therapy,
-              schema therapy, couples therapy, and stress reduction practices including mindfulness based practices. Gary's
-              approach is to emphasize overall individual and relationship wellbeing that incorporates both mental, emotional,
-              and physical health practices.
-            </p>
-            <p class="mt-3 text-sm">
-              <a href="mailto:ggraham@connectmh.com" class="text-brand-700 hover:text-brand-900">ggraham@connectmh.com</a>
-            </p>
-          </article>
+          <details class="reveal group rounded-3xl bg-white ring-1 ring-slate-200/70 shadow-sm hover:shadow-md transition">
+            <summary class="list-none cursor-pointer p-6">
+              <div class="flex items-start gap-4">
+                <div class="shrink-0">
+                  <img class="h-16 w-16 rounded-full object-cover ring-2 ring-white shadow-sm"
+                       src="therapists/gary.png" alt="Gary Graham portrait" />
+                </div>
+                <div class="min-w-0 flex-1">
+                  <div class="flex items-start justify-between gap-3">
+                    <div class="min-w-0">
+                      <h3 class="text-lg font-semibold text-slate-900 leading-snug">Gary Graham, ACSW, LMSW</h3>
+                      <p class="mt-1 text-sm text-slate-600">
+                        Work Stress • Couples • Anxiety • Depression • Grief • Trauma-Informed • Mindfulness
+                      </p>
+                    </div>
+                    <span class="mt-1 inline-flex h-9 w-9 items-center justify-center rounded-full bg-slate-50 ring-1 ring-slate-200 text-slate-500 transition group-open:rotate-45">+</span>
+                  </div>
+                  <p class="mt-3 text-sm font-semibold text-brand-700">Read bio</p>
+                </div>
+              </div>
+            </summary>
+
+            <div class="px-6 pb-6 pt-0">
+              <div class="border-t border-slate-100 pt-4">
+                <p class="text-sm leading-relaxed text-slate-700">
+                  Gary is a Licensed Masters level Social Worker with over 30 years clinical experience, including community mental
+                  health and private practice. He works with individuals, couples and families on work stress, relationship issues,
+                  depression, anxiety, grief and loss, and trauma. His approach incorporates evidence-based therapy and stress
+                  reduction practices including mindfulness.
+                </p>
+
+                <div class="mt-5 flex items-center justify-between gap-3">
+                  <a href="mailto:ggraham@connectmh.com" class="text-sm font-semibold text-brand-700 hover:text-brand-900">
+                    ggraham@connectmh.com
+                  </a>
+                  <a href="#contact" class="text-sm font-semibold text-slate-700 hover:text-slate-900">
+                    Get started →
+                  </a>
+                </div>
+              </div>
+            </div>
+          </details>
 
         </div>
+
+        <!-- Optional bottom CTA -->
+        <div class="reveal mt-10 text-center">
+          <a href="#contact" class="inline-flex items-center justify-center rounded-xl bg-brand-600 px-6 py-3 text-white font-semibold shadow-soft hover:bg-brand-700 btn">
+            Contact us to get matched
+          </a>
+          <p class="mt-3 text-sm text-slate-600">We’ll help you find the best fit for your goals and schedule.</p>
+        </div>
+
       </div>
     </section>
+
 
     <!-- =========================================================
       APPROACH
